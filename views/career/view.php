@@ -32,19 +32,19 @@ $this->title = $model->position.' at '.$model->company;
     <h1><?= Html::encode($model->position) ?></h1>
     at <?= Html::encode($model->company) ?></br>
   </center></div>
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
+
+<div class="panel panel-default">
+<div class="panel-heading"><h4>Requirements</h4></div>
+<div class="panel-body"><?= Html::encode($model->requirements) ?></div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading"><h4>Responsibilities</h4></div>
+<div class="panel-body"><?= Html::encode($model->responsibilities) ?></div>
+</div>
 
 
 
-
-
-
-            'requirements:ntext',
-            'responsibilities:ntext',
-        ],
-    ]) ?>
 
 </div>
 
