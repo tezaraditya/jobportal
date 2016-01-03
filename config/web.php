@@ -25,6 +25,9 @@ $config = [
 			'enablePrettyUrl' => true,
 			'rules' => [
 
+                          'career/<id:\d+>' => 'career/detail',
+                           '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+
 		  'personal' =>'users',
           'login' => 'site/login',
           'signup' => 'users/signup',

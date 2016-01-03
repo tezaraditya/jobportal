@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 .' <span class="glyphicon glyphicon-option-vertical"></span> Salary : '.'Rp '.number_format($data->salary_min,"0",",","."). ' - ' .'Rp '.number_format($data->salary_max,"0",",",".")
                 .'</div></div>',
 
-                        ['career/view','id'=>$data->id_career]);
+                        ['career/detail','id'=>$data->id_career]);
             },
 
         ),

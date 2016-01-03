@@ -49,9 +49,9 @@ class CareerController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionDetail($id)
     {
-        return $this->render('view', [
+        return $this->render('detail', [
             'model' => $this->findModel($id),
         ]);
     }
