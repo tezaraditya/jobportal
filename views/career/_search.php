@@ -24,7 +24,7 @@ use kartik\money\MaskMoney;
     <div class="col-md-12">  <?= $form->field($model, 'function')->dropDownList(ArrayHelper::map(\app\models\JobFunction::find()->asArray()->all(), 'function', 'function'), ['prompt' => '-- All Job Function --'])->label(false) ?></div>
   <div class="col-md-12"> <?= $form->field($model, 'location')->dropDownList(ArrayHelper::map(\app\models\Career::find()->asArray()->all(), 'location', 'location'), ['prompt' => '-- All Location --'])->label(false) ?> </div>
 
-<div class="col-md-12"><label>Range Salary (IDR)</label></div>
+
     <div class="col-md-6">
       <?php echo $form->field($model, 'salary_min')->widget(MaskMoney::classname(), [
     'pluginOptions' => [
@@ -33,7 +33,7 @@ use kartik\money\MaskMoney;
         'thousands' => '.',
         'allowNegative' => false,
     ]
-])->label(false); ?>
+])->label('Minimal Salary'); ?>
 
 </div>
 
@@ -45,7 +45,7 @@ use kartik\money\MaskMoney;
         'thousands' => '.',
         'allowNegative' => false,
     ]
-])->label(false); ?></div>
+])->label('Maximal Salary'); ?></div>
 
 
 
