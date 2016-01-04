@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 26 Nov 2015 pada 18.55
--- Versi Server: 10.0.17-MariaDB
--- PHP Version: 5.6.14
+-- Host: localhost
+-- Generation Time: Jan 05, 2016 at 03:53 AM
+-- Server version: 5.5.46-0ubuntu0.14.04.2
+-- PHP Version: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `resumeditor`
@@ -23,19 +23,58 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `certification`
+-- Table structure for table `career`
 --
 
-CREATE TABLE `certification` (
-  `id_certification` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `career` (
+  `id_career` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(100) NOT NULL,
+  `company` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `salary_min` varchar(20) NOT NULL,
+  `salary_max` varchar(20) NOT NULL,
+  `function` varchar(100) NOT NULL,
+  `level` varchar(100) NOT NULL,
+  `experience` varchar(100) NOT NULL,
+  `education` varchar(100) NOT NULL,
+  `degree` varchar(100) NOT NULL,
+  `requirements` text NOT NULL,
+  `responsibilities` text NOT NULL,
+  `expired_date` date NOT NULL,
+  PRIMARY KEY (`id_career`),
+  KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`level`,`experience`,`education`,`degree`),
+  KEY `salary_max` (`salary_max`),
+  KEY `email` (`email`),
+  KEY `function` (`function`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `career`
+--
+
+INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `level`, `experience`, `education`, `degree`, `requirements`, `responsibilities`, `expired_date`) VALUES
+(2, 'IT Manager', 'PT. Jalanbuntu Media', 'hr@jalanbuntu.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', 'Senior', '3 Years', 'Information System', 'Strata Satu', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
+(3, 'Tenant Officer', 'PT. Angin Ribut', 'hrd@anginribut.com', 'Jakarta', '4000000', '5000000', 'Maintenance', 'Senior', '3 Years', 'SMA', 'IPS', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certification`
+--
+
+CREATE TABLE IF NOT EXISTS `certification` (
+  `id_certification` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `certification` varchar(100) NOT NULL,
   `institution` varchar(100) NOT NULL,
-  `publication_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `publication_date` date NOT NULL,
+  PRIMARY KEY (`id_certification`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `certification`
+-- Dumping data for table `certification`
 --
 
 INSERT INTO `certification` (`id_certification`, `id_user`, `certification`, `institution`, `publication_date`) VALUES
@@ -47,22 +86,24 @@ INSERT INTO `certification` (`id_certification`, `id_user`, `certification`, `in
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `education`
+-- Table structure for table `education`
 --
 
-CREATE TABLE `education` (
-  `id_education` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `education` (
+  `id_education` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `degree` varchar(100) NOT NULL,
   `institution` varchar(100) NOT NULL,
   `majors` varchar(100) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `gpa` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `gpa` varchar(11) NOT NULL,
+  PRIMARY KEY (`id_education`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data untuk tabel `education`
+-- Dumping data for table `education`
 --
 
 INSERT INTO `education` (`id_education`, `id_user`, `degree`, `institution`, `majors`, `start_date`, `end_date`, `gpa`) VALUES
@@ -74,21 +115,180 @@ INSERT INTO `education` (`id_education`, `id_user`, `degree`, `institution`, `ma
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `organizational`
+-- Table structure for table `job_function`
 --
 
-CREATE TABLE `organizational` (
-  `id_organizational` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `job_function` (
+  `id_job_function` int(11) NOT NULL AUTO_INCREMENT,
+  `function` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_job_function`),
+  UNIQUE KEY `function` (`function`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=139 ;
+
+--
+-- Dumping data for table `job_function`
+--
+
+INSERT INTO `job_function` (`id_job_function`, `function`) VALUES
+(1, 'Administrasi'),
+(2, 'Administrasi Export'),
+(3, 'Administrasi Import'),
+(4, 'Agen Real Estat'),
+(5, 'Ahli Ekonomi'),
+(6, 'Ahli Geologi'),
+(7, 'Ahli Gizi'),
+(8, 'Aktuaria'),
+(9, 'Akuntan Perpajakan'),
+(10, 'Akuntansi, Keuangan'),
+(11, 'Apoteker / Farmasi'),
+(12, 'Arsitek'),
+(13, 'Arsitek Kapal Laut'),
+(14, 'Asisten Teknis Kesehatan'),
+(15, 'Audit Intern / Pengawasan'),
+(16, 'Awak Kapal Laut'),
+(17, 'Awak Penerbangan'),
+(18, 'Bagian Klaim'),
+(19, 'Bagian Umum'),
+(20, 'Bidan'),
+(21, 'Broker Asuransi'),
+(22, 'Broker Saham'),
+(23, 'Desainer Grafis Komputer'),
+(24, 'Dokter Gigi'),
+(25, 'Dokter Hewan'),
+(26, 'Dokter Spesialis'),
+(27, 'Dokter Umum'),
+(28, 'Drilling'),
+(29, 'Editor'),
+(30, 'Fisikawan'),
+(31, 'Fotografer'),
+(32, 'Geofisikawan'),
+(33, 'Guru / Tutor'),
+(34, 'Hubungan Investor'),
+(35, 'Hubungan Masyarakat'),
+(36, 'Hukum / Korporasi'),
+(37, 'Ilmuwan'),
+(38, 'Jurnalisme'),
+(39, 'Jurnalisme Teknik'),
+(40, 'Juru Gambar'),
+(41, 'Juru Masak'),
+(42, 'Kapten Laut'),
+(43, 'Kapten Pilot'),
+(44, 'Kepala Sekolah'),
+(45, 'Keuangan, Analis'),
+(46, 'Kimiawan'),
+(47, 'Kolektor'),
+(48, 'Komunikasi'),
+(49, 'Konsultan'),
+(50, 'Kreatif / Desain'),
+(51, 'Kredit / Pinjaman'),
+(52, 'Kurir'),
+(53, 'Laboratorium'),
+(54, 'Layanan Pelanggan'),
+(55, 'Logistik'),
+(56, 'Magang'),
+(57, 'Maintenance'),
+(58, 'Makanan dan Minuman'),
+(59, 'Management Trainee'),
+(60, 'Manajemen Keseluruhan'),
+(61, 'Manajemen Merk / Produk'),
+(62, 'Manajemen Mutu (ISO)'),
+(63, 'Manajemen Operasional'),
+(64, 'Manajemen Pabrik'),
+(65, 'Manajemen Properti'),
+(66, 'Manajemen Proyek'),
+(67, 'Manajer Portofolio'),
+(68, 'Manufaktur dan Produksi'),
+(69, 'Merchandiser'),
+(70, 'Model Fashion'),
+(71, 'Operasi Gudang'),
+(72, 'Operasi Hotel'),
+(73, 'Operasi Perbankan'),
+(74, 'Operasi Restoran'),
+(75, 'Operasi Ritel'),
+(76, 'Operator'),
+(77, 'Pelatih Olahraga'),
+(78, 'Pelatih, Pendidik'),
+(79, 'Pemandu Wisata'),
+(81, 'Pemasaran (Non-Teknis)'),
+(82, 'Pemasaran (Teknis)'),
+(80, 'Pemasaran Internet'),
+(83, 'Pembelian / Purchasing'),
+(84, 'Pembuat Pola'),
+(85, 'Pemerintahan'),
+(86, 'Pemrosesan Data'),
+(87, 'Penanggung (asuransi)'),
+(88, 'Penerjemah'),
+(89, 'Pengembangan Bisnis'),
+(90, 'Pengembangan Produk'),
+(91, 'Penggajian dan Fasilitas'),
+(93, 'Penjualan (Non-Teknis)'),
+(94, 'Penjualan (Teknis)'),
+(92, 'Penjualan dan Pemasaran'),
+(95, 'Penyiar, TV / Radio'),
+(96, 'Perawat'),
+(97, 'Periklanan / Promosi'),
+(98, 'Peternakan'),
+(99, 'Procurement'),
+(100, 'Pustakawan'),
+(101, 'Quality Control (QC)'),
+(102, 'Reporter'),
+(103, 'Resepsionis'),
+(104, 'Responsibilitas Sosial Perusahaan'),
+(105, 'Riset'),
+(106, 'Satuan Pengamanan'),
+(107, 'Sekretaris'),
+(108, 'Sekuritas, Trader'),
+(109, 'Staf Tiket'),
+(110, 'Sumber Daya Manusia'),
+(111, 'Supir'),
+(112, 'Teknik, Elektro'),
+(113, 'Teknik, Jaringan'),
+(114, 'Teknik, Keselamatan'),
+(115, 'Teknik, Kimia'),
+(116, 'Teknik, Komputer'),
+(117, 'Teknik, Lainnya'),
+(118, 'Teknik, Mesin'),
+(119, 'Teknik, Metalurgi'),
+(120, 'Teknik, Perangkat Keras'),
+(121, 'Teknik, Perangkat Lunak'),
+(122, 'Teknik, Perminyakan'),
+(123, 'Teknik, Pertanian'),
+(124, 'Teknik, Sipil'),
+(125, 'Teknik, Telekomunikasi'),
+(126, 'Teknik, Umum'),
+(127, 'Teknisi'),
+(128, 'Telemarketing'),
+(129, 'Terapis Kesehatan'),
+(130, 'TI, Administrator'),
+(132, 'TI, Network Engineer'),
+(133, 'TI, Programmer'),
+(134, 'TI, Systems Analyst'),
+(135, 'TI, Systems Engineer'),
+(136, 'TI, Web Developer'),
+(137, 'TI, Webmaster'),
+(131, 'Tidak disebutkan'),
+(138, 'Transportasi');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organizational`
+--
+
+CREATE TABLE IF NOT EXISTS `organizational` (
+  `id_organizational` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `organizational_name` varchar(100) NOT NULL,
   `position` varchar(100) NOT NULL,
   `responsibility` text NOT NULL,
   `start_date` date NOT NULL,
-  `end_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `end_date` date NOT NULL,
+  PRIMARY KEY (`id_organizational`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `organizational`
+-- Dumping data for table `organizational`
 --
 
 INSERT INTO `organizational` (`id_organizational`, `id_user`, `organizational_name`, `position`, `responsibility`, `start_date`, `end_date`) VALUES
@@ -97,11 +297,11 @@ INSERT INTO `organizational` (`id_organizational`, `id_user`, `organizational_na
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `id_number` varchar(50) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `birthplace` varchar(100) NOT NULL,
@@ -122,11 +322,14 @@ CREATE TABLE `users` (
   `authKey` varchar(100) NOT NULL,
   `accessToken` varchar(100) NOT NULL,
   `join_date` datetime NOT NULL,
-  `active` enum('y','n') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `active` enum('y','n') NOT NULL,
+  PRIMARY KEY (`id_user`),
+  UNIQUE KEY `id_number` (`id_user`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id_user`, `id_number`, `fullname`, `birthplace`, `birthdate`, `religion`, `gender`, `marital_status`, `nationaly`, `height`, `weight`, `identity_address`, `postal_code`, `domicile_address`, `domicile_postal_code`, `phone`, `email`, `password`, `authKey`, `accessToken`, `join_date`, `active`) VALUES
@@ -136,11 +339,11 @@ INSERT INTO `users` (`id_user`, `id_number`, `fullname`, `birthplace`, `birthdat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `working`
+-- Table structure for table `working`
 --
 
-CREATE TABLE `working` (
-  `id_working` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `working` (
+  `id_working` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `company` varchar(100) NOT NULL,
   `type` varchar(100) NOT NULL,
@@ -148,109 +351,48 @@ CREATE TABLE `working` (
   `description` text NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `salary` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `salary` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_working`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `working`
+-- Dumping data for table `working`
 --
 
 INSERT INTO `working` (`id_working`, `id_user`, `company`, `type`, `position`, `description`, `start_date`, `end_date`, `salary`) VALUES
 (2, 1, 'PT. Agranet Multicitra Siberkom', 'Online Media', 'Staff Display Ad', 'Order Processing, Upload Banner and , Reporting Advertising', '2013-11-06', '2015-11-07', '3300000');
 
 --
--- Indexes for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- Indexes for table `certification`
+-- Constraints for table `career`
 --
-ALTER TABLE `certification`
-  ADD PRIMARY KEY (`id_certification`),
-  ADD KEY `id_user` (`id_user`);
+ALTER TABLE `career`
+  ADD CONSTRAINT `career_ibfk_1` FOREIGN KEY (`function`) REFERENCES `job_function` (`function`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Indexes for table `education`
---
-ALTER TABLE `education`
-  ADD PRIMARY KEY (`id_education`),
-  ADD KEY `id_user` (`id_user`);
-
---
--- Indexes for table `organizational`
---
-ALTER TABLE `organizational`
-  ADD PRIMARY KEY (`id_organizational`),
-  ADD KEY `id_user` (`id_user`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `id_number` (`id_user`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `working`
---
-ALTER TABLE `working`
-  ADD PRIMARY KEY (`id_working`),
-  ADD KEY `id_user` (`id_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `certification`
---
-ALTER TABLE `certification`
-  MODIFY `id_certification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `education`
---
-ALTER TABLE `education`
-  MODIFY `id_education` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `organizational`
---
-ALTER TABLE `organizational`
-  MODIFY `id_organizational` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `working`
---
-ALTER TABLE `working`
-  MODIFY `id_working` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `certification`
+-- Constraints for table `certification`
 --
 ALTER TABLE `certification`
   ADD CONSTRAINT `certification_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `education`
+-- Constraints for table `education`
 --
 ALTER TABLE `education`
   ADD CONSTRAINT `education_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `organizational`
+-- Constraints for table `organizational`
 --
 ALTER TABLE `organizational`
   ADD CONSTRAINT `organizational_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `working`
+-- Constraints for table `working`
 --
 ALTER TABLE `working`
   ADD CONSTRAINT `working_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
