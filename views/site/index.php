@@ -76,7 +76,8 @@ $this->title = Yii::$app->params['siteName'];
        foreach($JobFunction as $row) {
            echo "<div class='col-lg-3 style:height:0px;'>"
            .Html::a($row->function,['career/index','CareerSearch[function]'=>$row->function]).
-           " (0)</div>";
+          " (".app\models\Career::find()->where(['function'=>$row->function])->count().
+           ")</div>";
        }
 
     ?>
@@ -92,7 +93,8 @@ $this->title = Yii::$app->params['siteName'];
        foreach($Location as $row) {
            echo "<div class='col-lg-3 style:height:0px;'><h3>"
            .Html::a($row->location,['career/index','CareerSearch[location]'=>$row->location]).
-           " (0)</h3></div>";
+           " (".app\models\Career::find()->where(['location'=>$row->location])->count().
+           ")</h3></div>";
        }
 
     ?>
