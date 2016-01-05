@@ -22,7 +22,7 @@ use kartik\money\MaskMoney;
 
     <div class="col-md-12"><?= $form->field($model, 'position')->textInput(['placeholder'=>'Position'])->label(false) ?></div>
     <div class="col-md-12">  <?= $form->field($model, 'function')->dropDownList(ArrayHelper::map(\app\models\JobFunction::find()->asArray()->all(), 'function', 'function'), ['prompt' => '-- All Job Function --'])->label(false) ?></div>
-  <div class="col-md-12"> <?= $form->field($model, 'location')->dropDownList(ArrayHelper::map(\app\models\Career::find()->asArray()->all(), 'location', 'location'), ['prompt' => '-- All Location --'])->label(false) ?> </div>
+  <div class="col-md-12"> <?= $form->field($model, 'location')->dropDownList(ArrayHelper::map(\app\models\Location::find()->asArray()->all(), 'location', 'location'), ['prompt' => '-- All Location --'])->label(false) ?> </div>
 
 
     <div class="col-md-6">

@@ -92,7 +92,7 @@ $this->title = Yii::$app->params['siteName'];
        foreach($Location as $row) {
            echo "<div class='col-lg-3 style:height:0px;'><h3>"
            .Html::a($row->location,['career/index','CareerSearch[location]'=>$row->location]).
-           "</h3></div>";
+           " (0)</h3></div>";
        }
 
     ?>
