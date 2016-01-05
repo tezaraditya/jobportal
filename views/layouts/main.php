@@ -69,18 +69,21 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-
-
 		<?= $content ?>
 
+    <footer class="footer">
+    <div class="container">
+              <p class="pull-left">
+              <?= yii\helpers\Html::a('<img height="30px" src='.Yii::$app->homeUrl.'/public/resumeditor.png>',Yii::$app->homeUrl) ?> .
+              <?= yii\helpers\Html::a('About Us',['site/about']) ?> .
+              <?= yii\helpers\Html::a('Contact Us',['site/contact']) ?> .
+              <?= yii\helpers\Html::a('Blog','http://blog.resumeditor.com') ?>
 
-
-
-
+            </p>
+    </div>
+      </footer>
 
 <?php $this->endBody() ?>
-
-
 </body>
 </html>
 <?php $this->endPage() ?>

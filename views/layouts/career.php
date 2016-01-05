@@ -1,14 +1,14 @@
 <?php $this->beginContent('@app/views/layouts/main.php'); ?>
 
 
-<div class="container">
-  <div class="career">
+
+  <div class="career container">
 
 
 	<?= $content ?>
 
 </div>
-</div>
+
 
 
 

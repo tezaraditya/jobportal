@@ -17,7 +17,7 @@ use mPDF;
 class SiteController extends Controller
 {
 
-    //public $layout = '';
+  //public $layout = '';
 
     public function behaviors()
     {
@@ -157,5 +157,13 @@ public function actionSavecv() {
 
         $this->layout='front';
         return $this->render('index');
+    }
+
+
+    public function actionAbout()
+    {
+
+
+        return $this->render('about');
     }
 }

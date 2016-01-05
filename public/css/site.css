@@ -8,7 +8,7 @@ body {
 .front {
 
 width:100%;
-
+min-height: 100%;
 
 
 }
@@ -16,6 +16,7 @@ width:100%;
 .core {
 
 margin-top:70px;
+min-height: 100%;
 
 }
 
@@ -23,7 +24,7 @@ margin-top:70px;
 
 
 margin-top: 70px;
-
+min-height: 100%;
 
 }
 
@@ -40,7 +41,7 @@ margin-top: 70px;
 
 .footer {
     height: 60px;
-    background-color: #000;
+    background-color: #eee;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
