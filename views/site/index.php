@@ -65,7 +65,7 @@ $this->title = Yii::$app->params['siteName'];
 
       foreach($JobFunction as $row) {
 
-          echo "<div class='col-lg-2 style:height:30px;'><div class='well'>".Html::a($row->function,['career/index','CareerSearch[function]'=>$row->function])."</div></div>";
+          echo "<div class='col-lg-2 style:height:30px;'>".Html::a($row->function,['career/index','CareerSearch[function]'=>$row->function])."</div>";
 
 
       }
