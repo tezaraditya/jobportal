@@ -30,7 +30,7 @@ use kartik\money\MaskMoney;
     'pluginOptions' => [
         'affixesStay' => true,
         'precision' => 0,
-        'thousands' => '.',
+        'thousands' => ',',
         'allowNegative' => false,
     ]
 ])->label('Minimal Salary'); ?>
@@ -42,7 +42,7 @@ use kartik\money\MaskMoney;
     'pluginOptions' => [
         'affixesStay' => true,
         'precision' => 0,
-        'thousands' => '.',
+        'thousands' => ',',
         'allowNegative' => false,
     ]
 ])->label('Maximal Salary'); ?></div>
