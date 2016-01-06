@@ -74,11 +74,12 @@ AppAsset::register($this);
     <footer class="footer">
     <div class="container">
               <p class="pull-left">
-              <?= yii\helpers\Html::a('<img height="30px" src='.Yii::$app->homeUrl.'/public/resumeditor.png>',Yii::$app->homeUrl) ?> .
+            &copy; 2015 - <?php echo date('Y'); ?> <?= Yii::$app->params['siteName'] ?>
+            </p>
+            <p class="pull-right">
               <?= yii\helpers\Html::a('About Us',['site/about']) ?> .
               <?= yii\helpers\Html::a('Contact Us',['site/contact']) ?> .
-              <?= yii\helpers\Html::a('Blog','http://blog.resumeditor.com') ?>
-
+                <?= yii\helpers\Html::a('Term of Use',['site/tos']) ?>
             </p>
     </div>
       </footer>

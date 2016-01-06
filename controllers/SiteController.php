@@ -166,4 +166,12 @@ public function actionSavecv() {
 
         return $this->render('about');
     }
+
+
+    public function actionContact() {
+
+        return $this->render('contact');
+
+
+    }
 }
