@@ -78,7 +78,7 @@ AppAsset::register($this);
             </p>
             <p class="pull-right">
               <?= yii\helpers\Html::a('About Us',['site/about']) ?> .
-              <?= yii\helpers\Html::a('Contact Us',['site/contact']) ?> .
+              <?= yii\helpers\Html::a('<span class="label label-primary">Contact Us</span>',['site/contact']) ?> .
                 <?= yii\helpers\Html::a('Terms & Conditions',['site/termsconditions']) ?>
             </p>
     </div>

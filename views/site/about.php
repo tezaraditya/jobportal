@@ -6,7 +6,7 @@ $this->title = 'About Us';
  ?>
 
 <div class="panel panel-primary well">
-  <div class="panel-heading"><center><h1>About Us</h1></center></div>
+  <div class="panel-heading"><center><h1><?= $this->title; ?></h1></center></div>
   <div class="panel-body">
   <h4>
   <p align="justify">

@@ -1,7 +1,11 @@
+<?php
 
+$this->title = 'Terms & Conditions';
+
+ ?>
 
 <div class="panel panel-primary well">
-  <div class="panel-heading"><center><h1>Terms & Conditions</h1></center></div>
+  <div class="panel-heading"><center><h1><?= $this->title; ?></h1></center></div>
   <div class="panel-body">
 
 

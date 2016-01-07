@@ -170,14 +170,6 @@ public function actionSavecv() {
         return $this->render('about');
     }
 
-    //Contact Form
-    public function actionContact() {
-
-        return $this->render('contact');
-
-
-    }
-
     //Terms And Conditions Page
     public function actionTermsconditions() {
 
