@@ -174,4 +174,11 @@ public function actionSavecv() {
 
 
     }
+
+    public function actionTermofuse() {
+
+        return $this->render('termofuse');
+
+
+    }
 }
