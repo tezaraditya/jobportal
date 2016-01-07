@@ -22,6 +22,13 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <script>
+
+  $zopim(function() {
+    $zopim.livechat.window.hide();
+  });
+
+</script>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -78,7 +85,7 @@ AppAsset::register($this);
             </p>
             <p class="pull-right">
               <?= yii\helpers\Html::a('About Us',['site/about']) ?> .
-              <?= yii\helpers\Html::a('<span class="label label-primary">Contact Us</span>',['site/contact']) ?> .
+              <?= yii\helpers\Html::a('<span class="label label-primary">Chat With Us</span>',['#chat']) ?> .
                 <?= yii\helpers\Html::a('Terms & Conditions',['site/termsconditions']) ?>
             </p>
     </div>
