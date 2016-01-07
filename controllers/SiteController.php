@@ -55,6 +55,7 @@ class SiteController extends Controller
         ];
     }
 
+    //Curriculum Vitae Module
     public function actionCv()
     {
 		 $personalData = new ActiveDataProvider([
@@ -90,7 +91,7 @@ class SiteController extends Controller
 		]);
     }
 
-
+//Save File to PDF Format
 public function actionSavecv() {
 
 	$personalData = new ActiveDataProvider([
@@ -128,6 +129,7 @@ public function actionSavecv() {
         exit;
     }
 
+    //Login Function
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
@@ -143,6 +145,7 @@ public function actionSavecv() {
         ]);
     }
 
+    //Logout Function
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -151,7 +154,7 @@ public function actionSavecv() {
     }
 
 
-
+    // Index or Welcome Page
     public function actionIndex()
     {
 
@@ -159,7 +162,7 @@ public function actionSavecv() {
         return $this->render('index');
     }
 
-
+    //About Page
     public function actionAbout()
     {
 
@@ -167,7 +170,7 @@ public function actionSavecv() {
         return $this->render('about');
     }
 
-
+    //Contact Form
     public function actionContact() {
 
         return $this->render('contact');
@@ -175,9 +178,10 @@ public function actionSavecv() {
 
     }
 
-    public function actionTermofuse() {
+    //Terms And Conditions Page
+    public function actionTermsconditions() {
 
-        return $this->render('termofuse');
+        return $this->render('termsconditions');
 
 
     }

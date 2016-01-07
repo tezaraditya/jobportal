@@ -79,7 +79,7 @@ AppAsset::register($this);
             <p class="pull-right">
               <?= yii\helpers\Html::a('About Us',['site/about']) ?> .
               <?= yii\helpers\Html::a('Contact Us',['site/contact']) ?> .
-                <?= yii\helpers\Html::a('Term of Use',['site/termofuse']) ?>
+                <?= yii\helpers\Html::a('Terms & Conditions',['site/termsconditions']) ?>
             </p>
     </div>
       </footer>
