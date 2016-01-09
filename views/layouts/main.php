@@ -64,15 +64,20 @@ AppAsset::register($this);
         'items' => [
            ['label' => 'Sign Up', 'url' => ['/users/signup'],'visible'=>Yii::$app->user->isGuest],
 
-            Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
-                [
-                    'label' => 'Logout (' . Yii::$app->user->identity->email . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
-        ],
-    ]);
+           Yii::$app->user->isGuest ?
+                  ['label' => 'Login', 'url' => ['/site/login']] :
+                  ['label' => Yii::$app->user->identity->fullname,
+                       'items' => [
+                        
+                           ['label' => 'Ubah Password', 'url' => ['/users/changepassword']],
+                           ['label' => 'Logout','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
+           ],
+                  ],
+
+
+
+               ],
+           ]);
     NavBar::end();
     ?>
 

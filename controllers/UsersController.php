@@ -33,11 +33,11 @@ class UsersController extends Controller
 
 			'access' => [
 					'class' => AccessControl::className(),
-					'only' => ['index','upload'],
+					'only' => ['index','upload','changepassword'],
 					'rules' => [
 							[
 								'allow' => true,
-								'actions' => ['index','upload'],
+								'actions' => ['index','upload','changepassword'],
 								'roles' => ['@'],
 
 							],
@@ -99,6 +99,30 @@ class UsersController extends Controller
 	  }
     }
 
+    //Change Password User
+    public function actionChangepassword() {
+
+      $idlogin = Yii::$app->user->identity->id;
+
+      $model = $this->findModel($idlogin);
+
+      if($model->load(Yii::$app->request->post()) && $model->save()) {
+        return $this->redirect(['index']);
+      } else {
+            return $this->render('changepassword',[
+                'model'=> $model,
+
+              ]);
+
+      }
+
+
+
+
+    }
+
+
+    //Profile Pictures Upload
     public function actionUpload()
   {
       $fileName = 'file';
