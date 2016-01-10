@@ -107,7 +107,7 @@ class UsersController extends Controller
       $model = $this->findModel($idlogin);
 
       if($model->load(Yii::$app->request->post()) && $model->save()) {
-        return $this->redirect(['index']);
+        return $this->redirect(['/']);
       } else {
             return $this->render('changepassword',[
                 'model'=> $model,
