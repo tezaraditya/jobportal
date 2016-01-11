@@ -23,7 +23,6 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
 	'public/js/angular.min.js',
-  'public/js/chat.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

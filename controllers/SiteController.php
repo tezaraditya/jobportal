@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use yii\data\ActiveDataProvider;
+use app\models\Feedback;
 
 use mPDF;
 
@@ -168,6 +169,25 @@ public function actionSavecv() {
 
 
         return $this->render('about');
+    }
+
+    //Send Feedback Page
+    public function actionContact()
+    {
+        $model = new Feedback();
+
+        if($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('feedbacksuccess');
+
+
+            return $this->refresh();
+        }
+
+        return $this->render('feedback',[
+
+          'model'=> $model
+
+        ]);
     }
 
     //Terms And Conditions Page

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 05, 2016 at 03:53 AM
+-- Generation Time: Jan 12, 2016 at 12:32 AM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `career` (
   KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`level`,`experience`,`education`,`degree`),
   KEY `salary_max` (`salary_max`),
   KEY `email` (`email`),
-  KEY `function` (`function`)
+  KEY `function` (`function`),
+  KEY `location` (`location`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -111,6 +112,30 @@ INSERT INTO `education` (`id_education`, `id_user`, `degree`, `institution`, `ma
 (4, 1, 'SMA', 'SMA PGRI 12', 'IPS', '2006-07-03', '2009-07-06', '6.7'),
 (5, 1, 'SLTP', 'SLTP Negeri 65 Jakarta', '-', '2003-07-01', '2006-08-01', '6.17'),
 (6, 1, 'SD', 'SD Negeri Kebon Bawang 03 Pagi Jakarta ', '-', '1997-07-01', '2003-08-01', '8.15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id_feedback` int(11) NOT NULL AUTO_INCREMENT,
+  `subject` varchar(300) NOT NULL,
+  `feedback` text NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_feedback`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id_feedback`, `subject`, `feedback`, `name`, `email`, `phone`) VALUES
+(1, 'Belum Bisa Apply', 'Kok Tombol Apply nya gak berfungsi ya ?', 'Adit', 'aditseller@gmail.com', '080989999'),
+(2, 'Tombol Apply', '<p>Tombol Apply Belum Bisa</p>', 'Tezar Aditya', 'tezaraditya@gmail.com', '081314421461');
 
 -- --------------------------------------------------------
 
@@ -272,6 +297,59 @@ INSERT INTO `job_function` (`id_job_function`, `function`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `location`
+--
+
+CREATE TABLE IF NOT EXISTS `location` (
+  `id_location` int(11) NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_location`),
+  UNIQUE KEY `location` (`location`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`id_location`, `location`) VALUES
+(1, 'Aceh'),
+(2, 'Bali'),
+(3, 'Banten'),
+(4, 'Bengkulu'),
+(34, 'Daerah Istimewa Yogyakarta'),
+(5, 'Gorontalo'),
+(6, 'Jakarta'),
+(7, 'Jambi'),
+(8, 'Jawa Barat'),
+(9, 'Jawa Tengah'),
+(10, 'Jawa Timur'),
+(11, 'Kalimantan Barat'),
+(12, 'Kalimantan Selatan'),
+(13, 'Kalimantan Tengah'),
+(14, 'Kalimantan Timur'),
+(15, 'Kalimantan Utara'),
+(16, 'Kepulauan Bangka Belitung'),
+(17, 'Kepulauan Riau'),
+(18, 'Lampung'),
+(19, 'Maluku'),
+(20, 'Maluku Utara'),
+(21, 'Nusa Tenggara Barat'),
+(22, 'Nusa Tenggara Timur'),
+(23, 'Papua'),
+(24, 'Papua Barat'),
+(25, 'Riau'),
+(26, 'Sulawesi Barat'),
+(27, 'Sulawesi Selatan'),
+(28, 'Sulawesi Tengah'),
+(29, 'Sulawesi Tenggara'),
+(30, 'Sulawesi Utara'),
+(31, 'Sumatera Barat'),
+(32, 'Sumatera Selatan'),
+(33, 'Sumatera Utara');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `organizational`
 --
 
@@ -333,7 +411,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id_user`, `id_number`, `fullname`, `birthplace`, `birthdate`, `religion`, `gender`, `marital_status`, `nationaly`, `height`, `weight`, `identity_address`, `postal_code`, `domicile_address`, `domicile_postal_code`, `phone`, `email`, `password`, `authKey`, `accessToken`, `join_date`, `active`) VALUES
-(1, '3172020409910005', 'Tezar Aditya', 'Cirebon', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 78, 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', '081314421461', 'tezaraditya@gmail.com', '3630363034393931', '52ca6f764e239e4d9e9e67c89fcf0cae6a4e8ac5', '', '2015-11-02 06:28:29', 'y'),
+(1, '3172020409910005', 'Tezar Aditya', 'Cirebon', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 78, 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', '081314421461', 'tezaraditya@gmail.com', '6f6f33346f32', '52ca6f764e239e4d9e9e67c89fcf0cae6a4e8ac5', '', '2016-01-10 09:57:13', 'y'),
 (4, '', 'Jalan Buntu', '', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', NULL, NULL, '', 'jalanbuntumedia@gmail.com', '3630363034393931', '50769ede613cb93b8300c832af691d80514c4f39', '', '2015-11-26 18:48:09', 'y');
 
 -- --------------------------------------------------------
@@ -361,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `working` (
 --
 
 INSERT INTO `working` (`id_working`, `id_user`, `company`, `type`, `position`, `description`, `start_date`, `end_date`, `salary`) VALUES
-(2, 1, 'PT. Agranet Multicitra Siberkom', 'Online Media', 'Staff Display Ad', 'Order Processing, Upload Banner and , Reporting Advertising', '2013-11-06', '2015-11-07', '3300000');
+(2, 1, 'PT. Agranet Multicitra Siberkom', 'Online Media', 'Staff Display Ad', 'Order Processing, Upload Banner and , Reporting Advertising', '2013-11-06', '2015-12-15', '3100000');
 
 --
 -- Constraints for dumped tables
@@ -371,7 +449,8 @@ INSERT INTO `working` (`id_working`, `id_user`, `company`, `type`, `position`, `
 -- Constraints for table `career`
 --
 ALTER TABLE `career`
-  ADD CONSTRAINT `career_ibfk_1` FOREIGN KEY (`function`) REFERENCES `job_function` (`function`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `career_ibfk_1` FOREIGN KEY (`function`) REFERENCES `job_function` (`function`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `career_ibfk_2` FOREIGN KEY (`location`) REFERENCES `location` (`location`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `certification`

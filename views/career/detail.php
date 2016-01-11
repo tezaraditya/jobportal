@@ -14,8 +14,8 @@ $this->title = $model->position.' at '.$model->company;
 <div class="col-md-4">
   <div class="well">  <center>
     <h1><?= Html::encode($model->position) ?></h1>
-    <p>at <?= Html::encode($model->company) ?></p>
-    <p><?= Html::a('<span class="glyphicon glyphicon-check"></span> Apply','/',['class'=>'btn btn-primary btn-lg']) ?></p>
+    <p>at <?= Html::encode($model->company) ?></p><hr/>
+    <p><?= Html::a('Send Your CV','/',['class'=>'btn btn-primary btn-lg']) ?></p>
   </center></div>
   <!-- List group -->
   <ul class="list-group">
@@ -50,7 +50,7 @@ $this->title = $model->position.' at '.$model->company;
 <div class="panel-body"><?= Html::encode($model->responsibilities) ?></div>
 </div>
 
-<p><?= Html::a('<span class="glyphicon glyphicon-check"></span> Apply','/',['class'=>'btn btn-primary btn-lg btn-block']) ?></p>
+<p><?= Html::a(' Send Your CV','/',['class'=>'btn btn-primary btn-lg btn-block']) ?></p>
 
 
 </div>

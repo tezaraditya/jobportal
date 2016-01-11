@@ -32,7 +32,11 @@ $config = [
           'login' => 'site/login',
           'signup' => 'users/signup',
           'logout' => 'site/logout',
-          'cv' => 'site/cv'
+          'cv' => 'site/cv',
+          'contactus' => 'site/contact',
+          'termsconditions' => 'site/termsconditions',
+          'aboutus' => 'site/about',
+
 
 
 			],

@@ -69,7 +69,7 @@ AppAsset::register($this);
                   ['label' => Yii::$app->user->identity->fullname,
                        'items' => [
 
-                           ['label' => 'Ubah Password', 'url' => ['/users/changepassword']],
+                           ['label' => 'Change Password', 'url' => ['/users/changepassword']],
                            ['label' => 'Logout','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
            ],
                   ],
@@ -90,8 +90,8 @@ AppAsset::register($this);
             </p>
             <p>
               <?= yii\helpers\Html::a('<span class="label label-success">About Us</span>',['site/about']) ?> .
-              <?= yii\helpers\Html::a('<span class="label label-primary">Chat With Us</span>',['#chat']) ?> .
-                <?= yii\helpers\Html::a('<span class="label label-warning">Terms & Conditions</span>',['site/termsconditions']) ?>
+                <?= yii\helpers\Html::a('<span class="label label-warning">Terms & Conditions</span>',['site/termsconditions']) ?> .
+                <?= yii\helpers\Html::a('<span class="label label-primary">Contact Us</span>',['/site/contact']) ?>
             </p>
           </center>
     </div>
