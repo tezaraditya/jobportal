@@ -3,12 +3,21 @@ Change Log: `yii2-editable`
 
 ## Version 1.7.4
 
-**Date:** 15-Aug-2015
+**Date:** 27-Dec-2015
 
 1. (enh #84): Update Portugese translations.
 2. (enh #85): Add Greek translations.
-3. (enh #88): Update Russian translations.
-4. Better fix for #64 in resetting errors.
+3. (enh #87): Add jQuery plugin destroy & create methods.
+4. (enh #88): Update Russian translations.
+5. Better fix for #64 in resetting errors.
+6. (enh #91): Add plugin option `encodeOutput` to encode HTML output.
+7. (enh #100): New `initEditablePopover` method to initialize popover for AJAX replaced editables.
+8. (enh #103): Add Czech Translations.
+9. Code optimizations for widget and JS plugin.
+10. (enh #104): Enhance jQuery events
+    - New event `editableBeforeSubmit` that submits before ajax request
+    - Enable events to be aborted and prevent default behavior by `event.preventDefault()` (applicable for most critical editable events)
+    - Incorporate event namespace `.editable` on the critical events
 
 ## Version 1.7.3
 

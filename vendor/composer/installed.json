@@ -965,106 +965,6 @@
         ]
     },
     {
-        "name": "kartik-v/yii2-popover-x",
-        "version": "v1.3.1",
-        "version_normalized": "1.3.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-popover-x.git",
-            "reference": "6a21af40c66dd10588fede392d7458f80890cac3"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/6a21af40c66dd10588fede392d7458f80890cac3",
-            "reference": "6a21af40c66dd10588fede392d7458f80890cac3",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/bootstrap-popover-x": "~1.4",
-            "kartik-v/yii2-krajee-base": "~1.7"
-        },
-        "time": "2015-07-01 16:51:32",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\popover\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
-        "homepage": "https://github.com/kartik-v/yii2-popover-x",
-        "keywords": [
-            "bootstrap",
-            "extended",
-            "jquery",
-            "modal",
-            "modal-popover",
-            "popover",
-            "popover-x"
-        ]
-    },
-    {
-        "name": "kartik-v/yii2-editable",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-editable.git",
-            "reference": "f9ecdf622d9477d217efef8522fbd2622de2fa20"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/a03009a49aed4a0e528f2e8c918676b426c88c0e",
-            "reference": "f9ecdf622d9477d217efef8522fbd2622de2fa20",
-            "shasum": ""
-        },
-        "require": {
-            "kartik-v/yii2-krajee-base": "~1.7",
-            "kartik-v/yii2-popover-x": "~1.3"
-        },
-        "time": "2015-08-14 21:18:03",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\editable\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
-        "homepage": "https://github.com/kartik-v/yii2-editable",
-        "keywords": [
-            "bootstrap",
-            "editable",
-            "input",
-            "jquery",
-            "popover",
-            "popover-x",
-            "widget"
-        ]
-    },
-    {
         "name": "imagine/imagine",
         "version": "v0.5.0",
         "version_normalized": "0.5.0.0",
@@ -1270,54 +1170,6 @@
         ]
     },
     {
-        "name": "kartik-v/yii2-krajee-base",
-        "version": "v1.7.8",
-        "version_normalized": "1.7.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-            "reference": "f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f",
-            "reference": "f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2-bootstrap": "@dev"
-        },
-        "time": "2015-11-22 06:35:23",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "kartik\\base\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Kartik Visweswaran",
-                "email": "kartikv2@gmail.com",
-                "homepage": "http://www.krajee.com/"
-            }
-        ],
-        "description": "Base library and foundation components for all Yii2 Krajee extensions.",
-        "homepage": "https://github.com/kartik-v/yii2-krajee-base",
-        "keywords": [
-            "base",
-            "extension",
-            "foundation",
-            "krajee",
-            "widget",
-            "yii2"
-        ]
-    },
-    {
         "name": "perminder-klair/yii2-dropzone",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -1460,6 +1312,154 @@
             "money",
             "widget",
             "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-krajee-base",
+        "version": "1.8.2",
+        "version_normalized": "1.8.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-krajee-base.git",
+            "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/0c274e31e4392cbafc5fe158eae81738794e02ce",
+            "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2-bootstrap": "@dev"
+        },
+        "time": "2016-01-10 12:26:29",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\base\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Base library and foundation components for all Yii2 Krajee extensions.",
+        "homepage": "https://github.com/kartik-v/yii2-krajee-base",
+        "keywords": [
+            "base",
+            "extension",
+            "foundation",
+            "krajee",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-popover-x",
+        "version": "v1.3.3",
+        "version_normalized": "1.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-popover-x.git",
+            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/38f2208cf92f8c4a7758f485575a881cade1970c",
+            "reference": "38f2208cf92f8c4a7758f485575a881cade1970c",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/bootstrap-popover-x": "~1.4",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2016-01-12 16:59:09",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kartik\\popover\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An extended bootstrap 3.0 popover widget which combines both the bootstrap popover and modal features and includes various new styling enhancements.",
+        "homepage": "https://github.com/kartik-v/yii2-popover-x",
+        "keywords": [
+            "bootstrap",
+            "extended",
+            "jquery",
+            "modal",
+            "modal-popover",
+            "popover",
+            "popover-x"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-editable",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-editable.git",
+            "reference": "b228ad92a4faa65e596b9609b5aaf567fb2b5211"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/b228ad92a4faa65e596b9609b5aaf567fb2b5211",
+            "reference": "b228ad92a4faa65e596b9609b5aaf567fb2b5211",
+            "shasum": ""
+        },
+        "require": {
+            "kartik-v/yii2-krajee-base": "~1.7",
+            "kartik-v/yii2-popover-x": "~1.3"
+        },
+        "time": "2015-12-31 03:43:04",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\editable\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "An enhanced editable widget for Yii 2.0 that allows easy editing of displayed data with numerous configuration possibilities.",
+        "homepage": "https://github.com/kartik-v/yii2-editable",
+        "keywords": [
+            "bootstrap",
+            "editable",
+            "input",
+            "jquery",
+            "popover",
+            "popover-x",
+            "widget"
         ]
     }
 ]

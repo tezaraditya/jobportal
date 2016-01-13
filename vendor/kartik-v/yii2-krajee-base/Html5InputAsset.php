@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2016
  * @package yii2-krajee-base
- * @version 1.7.8
+ * @version 1.8.2
  */
 
 namespace kartik\base;

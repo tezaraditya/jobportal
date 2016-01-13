@@ -17,7 +17,7 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-swiftmailer": "^2.0",
         "yiisoft/yii2-jui": "^2.0",
         "perminder-klair/yii2-dropzone": "dev-master",
         "kartik-v/yii2-editable": "@dev",

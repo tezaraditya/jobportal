@@ -48,24 +48,6 @@ return array (
       '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
     ),
   ),
-  'kartik-v/yii2-popover-x' => 
-  array (
-    'name' => 'kartik-v/yii2-popover-x',
-    'version' => '1.3.1.0',
-    'alias' => 
-    array (
-      '@kartik/popover' => $vendorDir . '/kartik-v/yii2-popover-x',
-    ),
-  ),
-  'kartik-v/yii2-editable' => 
-  array (
-    'name' => 'kartik-v/yii2-editable',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
-    ),
-  ),
   'yiisoft/yii2-imagine' => 
   array (
     'name' => 'yiisoft/yii2-imagine',
@@ -93,15 +75,6 @@ return array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '1.7.8.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
-    ),
-  ),
   'perminder-klair/yii2-dropzone' => 
   array (
     'name' => 'perminder-klair/yii2-dropzone',
@@ -118,6 +91,33 @@ return array (
     'alias' => 
     array (
       '@kartik/money' => $vendorDir . '/kartik-v/yii2-money',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.2.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
+  'kartik-v/yii2-popover-x' => 
+  array (
+    'name' => 'kartik-v/yii2-popover-x',
+    'version' => '1.3.3.0',
+    'alias' => 
+    array (
+      '@kartik/popover' => $vendorDir . '/kartik-v/yii2-popover-x',
+    ),
+  ),
+  'kartik-v/yii2-editable' => 
+  array (
+    'name' => 'kartik-v/yii2-editable',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
     ),
   ),
 );

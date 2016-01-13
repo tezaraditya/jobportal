@@ -15,7 +15,7 @@ $this->title = $model->position.' at '.$model->company;
   <div class="well">  <center>
     <h1><?= Html::encode($model->position) ?></h1>
     <p>at <?= Html::encode($model->company) ?></p><hr/>
-    <p><?= Html::a('Send Your CV','/',['class'=>'btn btn-primary btn-lg']) ?></p>
+    <p><?= Html::a('Send Your CV','',['class'=>'btn btn-primary btn-lg']) ?></p>
   </center></div>
   <!-- List group -->
   <ul class="list-group">

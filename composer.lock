@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "96fc6ac853c786b1436ac17cc92407f5",
-    "content-hash": "caf2acffbb1c70c996885359df70eb7b",
+    "hash": "963cd6f722ba3f4e34b0d8a0dd4bedd5",
+    "content-hash": "b921d117aa510c82a0805cf29a58b032",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -444,12 +444,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-editable.git",
-                "reference": "f9ecdf622d9477d217efef8522fbd2622de2fa20"
+                "reference": "b228ad92a4faa65e596b9609b5aaf567fb2b5211"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/a03009a49aed4a0e528f2e8c918676b426c88c0e",
-                "reference": "f9ecdf622d9477d217efef8522fbd2622de2fa20",
+                "url": "https://api.github.com/repos/kartik-v/yii2-editable/zipball/b228ad92a4faa65e596b9609b5aaf567fb2b5211",
+                "reference": "b228ad92a4faa65e596b9609b5aaf567fb2b5211",
                 "shasum": ""
             },
             "require": {
@@ -484,20 +484,20 @@
                 "popover-x",
                 "widget"
             ],
-            "time": "2015-08-14 21:18:03"
+            "time": "2015-12-31 03:43:04"
         },
         {
             "name": "kartik-v/yii2-krajee-base",
-            "version": "v1.7.8",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f"
+                "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f",
-                "reference": "f90b9ff515ced4e40ff5ec8156a5c9f7f51e2a7f",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/0c274e31e4392cbafc5fe158eae81738794e02ce",
+                "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce",
                 "shasum": ""
             },
             "require": {
@@ -530,7 +530,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2015-11-22 06:35:23"
+            "time": "2016-01-10 12:26:29"
         },
         {
             "name": "kartik-v/yii2-money",
@@ -584,16 +584,16 @@
         },
         {
             "name": "kartik-v/yii2-popover-x",
-            "version": "v1.3.1",
+            "version": "v1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-popover-x.git",
-                "reference": "6a21af40c66dd10588fede392d7458f80890cac3"
+                "reference": "38f2208cf92f8c4a7758f485575a881cade1970c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/6a21af40c66dd10588fede392d7458f80890cac3",
-                "reference": "6a21af40c66dd10588fede392d7458f80890cac3",
+                "url": "https://api.github.com/repos/kartik-v/yii2-popover-x/zipball/38f2208cf92f8c4a7758f485575a881cade1970c",
+                "reference": "38f2208cf92f8c4a7758f485575a881cade1970c",
                 "shasum": ""
             },
             "require": {
@@ -628,7 +628,7 @@
                 "popover",
                 "popover-x"
             ],
-            "time": "2015-07-01 16:51:32"
+            "time": "2016-01-12 16:59:09"
         },
         {
             "name": "mpdf/mpdf",
