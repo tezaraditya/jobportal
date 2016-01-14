@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use yii\data\ActiveDataProvider;
 use app\models\Feedback;
+use app\models\Users;
 
 use mPDF;
 
@@ -197,4 +198,37 @@ public function actionSavecv() {
 
 
     }
+
+    //Forgot Password Action
+    public function actionForgotpassword() {
+
+      $model = new Users;
+
+
+
+
+      if($model->load(Yii::$app->request->post())) {
+
+        Yii::$app->mailer->compose()
+          ->setFrom('resumeditorcom@gmail.com')
+          ->setTo($model->email)
+          ->setSubject('Forgot Password')
+          ->setHtmlBody("<h1>Your Old Password:".Users::find(['password'])->where(['email'=>$model->email])->one()."</h1>")
+          ->send();
+
+        return $this->redirect(['/']);
+
+
+      }
+      return $this->render('forgotpassword',[
+
+        'model' => $model,
+
+
+        ]);
+
+
+    }
+
+
 }
