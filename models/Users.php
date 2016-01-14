@@ -7,6 +7,7 @@ use Yii;
 
 class Users extends \yii\db\ActiveRecord
 {
+    public $verifyCode;
     /**
      * @inheritdoc
      */
@@ -29,7 +30,8 @@ class Users extends \yii\db\ActiveRecord
             [['birthplace'], 'string', 'max' => 100],
             [['email','authKey'], 'unique'],
             [['religion', 'postal_code', 'domicile_postal_code', 'phone'], 'string', 'max' => 20],
-            [['password'], 'string', 'max' => 300,'min'=>6]
+            [['password'], 'string', 'max' => 300,'min'=>6],
+            [['verifyCode'],'captcha']
         ];
     }
 
@@ -63,23 +65,23 @@ class Users extends \yii\db\ActiveRecord
             'active' => 'Active',
         ];
     }
-	
-	
+
+
 	public function beforeSave($insert) {
-    if(isset($this->password)) 
-		
+    if(isset($this->password))
+
 		 $this->password = bin2hex($this->password);
 		 $this->authKey = sha1($this->email);
 		 $this->join_date = date('Y-m-d H:i:s');
-		 
-		if($this->domicile_address == NULL) 
-		
+
+		if($this->domicile_address == NULL)
+
 			$this->domicile_address = $this->identity_address;
 			$this->domicile_postal_code = $this->postal_code;
-			
-		
-		
-		
+
+
+
+
 
 		return parent::beforeSave($insert);
 	}

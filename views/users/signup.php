@@ -4,6 +4,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\jui\DatePicker;
+use yii\captcha\Captcha;
 
 $this->title = "Sign Up";
 
@@ -26,8 +27,8 @@ $this->title = "Sign Up";
 
 
 
-<div class="col-lg-3"></div>
-<div class="col-lg-6">
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
 
 <div class="panel panel-primary ">
   <div class="panel-heading">
@@ -51,7 +52,9 @@ $this->title = "Sign Up";
 
 
 
-
+    <div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+        'template' => '<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div>',
+    ]) ?></div>
 
 
 

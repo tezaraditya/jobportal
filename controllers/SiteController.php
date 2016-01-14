@@ -217,8 +217,19 @@ public function actionSavecv() {
           ->setTo($model->email)
           ->setSubject('Forgot Password')
           ->setHtmlBody(
-          "<h1>Your Email: ". $queryRetrieve->email ."</h1>
-          <h1>Your Password: ". pack("H*",($queryRetrieve->password)) ."</h1>"
+          "<p>Hi <b>".$queryRetrieve->fullname.",</b></p>
+
+          <p>This is your Email and Password :</p>
+
+          <h4>Your Email : ". $queryRetrieve->email ."</h4>
+          <h4>Your Password : ". pack("H*",($queryRetrieve->password)) ."</h4>
+
+          <p><b><i><h3>Note : Please Login Again and change your Password after login.</h3></b></i></p>
+          <hr/>
+          <p>Thank You for using <b>Resumeditor.com</b></p>
+
+          <p>Have a Nice Day :)</p>
+          "
 
           )
           ->send();
