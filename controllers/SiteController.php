@@ -209,11 +209,18 @@ public function actionSavecv() {
 
       if($model->load(Yii::$app->request->post())) {
 
+
+        $queryRetrieve = Users::find()->where(['email'=>$model->email])->one();
+
         Yii::$app->mailer->compose()
           ->setFrom('resumeditorcom@gmail.com')
           ->setTo($model->email)
           ->setSubject('Forgot Password')
-          ->setHtmlBody("<h1>Your Old Password:".Users::find(['password'])->where(['email'=>$model->email])->one()."</h1>")
+          ->setHtmlBody(
+          "<h1>Your Email: ". $queryRetrieve->email ."</h1>
+          <h1>Your Password: ". pack("H*",($queryRetrieve->password)) ."</h1>"
+
+          )
           ->send();
 
         return $this->redirect(['/']);
