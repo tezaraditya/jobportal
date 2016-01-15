@@ -120,4 +120,13 @@ return array (
       '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable',
     ),
   ),
+  'himiklab/yii2-recaptcha-widget' => 
+  array (
+    'name' => 'himiklab/yii2-recaptcha-widget',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@himiklab/yii2/recaptcha' => $vendorDir . '/himiklab/yii2-recaptcha-widget',
+    ),
+  ),
 );

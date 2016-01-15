@@ -23,7 +23,8 @@
         "kartik-v/yii2-editable": "@dev",
         "yiisoft/yii2-imagine": "^2.0",
         "mpdf/mpdf": "dev-master",
-        "kartik-v/yii2-money": "*"
+        "kartik-v/yii2-money": "*",
+        "himiklab/yii2-recaptcha-widget": "*"
         
     },
     "require-dev": {

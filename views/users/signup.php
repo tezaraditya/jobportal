@@ -52,9 +52,10 @@ $this->title = "Sign Up";
 
 
 
-    <div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-        'template' => '<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div>',
-    ]) ?></div>
+    <div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(
+        \himiklab\yii2\recaptcha\ReCaptcha::className(),
+        ['siteKey' => '6LchcBUTAAAAAPOjwnURVEkl-oLhcLALibIhazov','class'=>'required']
+    ) ?></div>
 
 
 

@@ -31,7 +31,7 @@ class Users extends \yii\db\ActiveRecord
             [['email','authKey'], 'unique'],
             [['religion', 'postal_code', 'domicile_postal_code', 'phone'], 'string', 'max' => 20],
             [['password'], 'string', 'max' => 300,'min'=>6],
-            [['verifyCode'],'captcha']
+            [['verifyCode'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6LchcBUTAAAAALkOMMgoifROhAHvgYUSRpuq_enu','on'=>['signup','changepassword']]
         ];
     }
 
@@ -63,6 +63,7 @@ class Users extends \yii\db\ActiveRecord
             'accessToken' => 'Access Token',
             'join_date' => 'Join Date',
             'active' => 'Active',
+            'verifyCode' => '',
         ];
     }
 

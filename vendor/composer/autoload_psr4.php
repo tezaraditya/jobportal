@@ -22,6 +22,7 @@ return array(
     'kartik\\money\\' => array($vendorDir . '/kartik-v/yii2-money'),
     'kartik\\editable\\' => array($vendorDir . '/kartik-v/yii2-editable'),
     'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base'),
+    'himiklab\\yii2\\recaptcha\\' => array($vendorDir . '/himiklab/yii2-recaptcha-widget'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );
