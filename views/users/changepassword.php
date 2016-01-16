@@ -16,9 +16,16 @@ $this->title = 'Change Password';
 
 
 
-  <div class="alert alert-success" align="center" style="font-size:30px">
-      <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">  Change Password Success. <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">
+  <div align="center">
+      <h1><span class="glyphicon glyphicon-ok"></span> Success!</h1>
+      <h3>Your Password Has Been Changed.</h3>
+      <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">
+
+        <h4><?= Html::a('Click here if you browser does not automatically redirect you.',['/']); ?></h4>
     </div>
+
+
+
 
   <?php else: ?>
 
@@ -35,7 +42,9 @@ $this->title = 'Change Password';
   <?= $form->field($model,'password')->passwordInput(['value'=>''])->label('New Password') ?>
   </div>
 
-
+  <div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+      'template' => '<div class="well"><div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div></div>',
+  ]) ?></div>
 
   <div class="form-group col-md-12">
         <?= Html::submitButton('Change Password', ['class' => 'btn btn-primary btn-block ']) ?>

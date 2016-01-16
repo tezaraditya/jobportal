@@ -199,54 +199,6 @@ public function actionSavecv() {
 
     }
 
-    //Forgot Password Action
-    public function actionForgotpassword() {
-
-      $model = new Users;
-
-
-
-
-      if($model->load(Yii::$app->request->post())) {
-
-
-        $queryRetrieve = Users::find()->where(['email'=>$model->email])->one();
-
-        Yii::$app->mailer->compose()
-          ->setFrom('resumeditorcom@gmail.com')
-          ->setTo($model->email)
-          ->setSubject('Forgot Password')
-          ->setHtmlBody(
-          "<p>Hi <b>".$queryRetrieve->fullname.",</b></p>
-
-          <p>This is your Email and Password :</p>
-
-          <h4>Your Email : ". $queryRetrieve->email ."</h4>
-          <h4>Your Password : ". pack("H*",($queryRetrieve->password)) ."</h4>
-
-          <p><b><i><h3>Note : Please Login Again and change your Password after login.</h3></b></i></p>
-          <hr/>
-          <p>Thank You for using <b>Resumeditor.com</b></p>
-
-          <p>Have a Nice Day :)</p>
-          "
-
-          )
-          ->send();
-
-        return $this->redirect(['/']);
-
-
-      }
-      return $this->render('forgotpassword',[
-
-        'model' => $model,
-
-
-        ]);
-
-
-    }
-
+    
 
 }

@@ -40,7 +40,7 @@ $this->title = 'Log In';
                 <div class=" col-md-6">  <?= Html::submitButton('Log In', ['class' => 'btn btn-primary btn-block ', 'name' => 'login-button']) ?></div> <div class="col-md-6"> <?= $form->field($model, 'rememberMe')->checkbox() ?> </div>
         </div>
 
-        <div class="col-md-12"><?= Html::a('Forgot Password ?',['site/forgotpassword']) ?></div>
+        <div class="col-md-12"><?= Html::a('Forgot Password ?',['users/forgotpassword']) ?></div>
 
     <?php ActiveForm::end(); ?>
 

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-
+use yii\captcha\Captcha;
 
 $this->title = Yii::t('app', 'Personal Data');
 ?>
@@ -88,7 +88,9 @@ $this->title = Yii::t('app', 'Personal Data');
 </div>
 
 
-
+<div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+    'template' => '<div class="well"><div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div></div>',
+]) ?></div>
 
 
 

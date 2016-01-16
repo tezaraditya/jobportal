@@ -8,6 +8,30 @@ $this->title = "Forgot Password";
 
  ?>
 
+
+ <?php if (Yii::$app->session->hasFlash('forgotpassword_success')): ?>
+
+ <meta http-equiv="refresh" content="7;url=<?= Yii::$app->homeUrl; ?>"/>
+
+
+
+
+   <div align="center">
+       <h1><span class="glyphicon glyphicon-envelope"></span> </h1>
+       <h1>Please Check Your Email !</h1>
+       <h3> We sent an email with your password </h3>
+       <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">
+
+         <h4><?= Html::a('Click here if you browser does not automatically redirect you.',['/']); ?></h4>
+     </div>
+
+
+
+
+   <?php else: ?>
+
+
+
  <div class="col-lg-2"></div>
 <div class="col-lg-7">
 
@@ -35,3 +59,6 @@ $this->title = "Forgot Password";
 </div>
 
 </div>
+
+
+<?php endif; ?>

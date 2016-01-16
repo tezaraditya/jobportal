@@ -37,7 +37,7 @@ $config = [
           'termsconditions' => 'site/termsconditions',
           'aboutus' => 'site/about',
           'changepassword' => 'users/changepassword',
-          'forgotpassword' => 'site/forgotpassword',
+          'forgotpassword' => 'users/forgotpassword',
 
 
 
