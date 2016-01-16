@@ -107,7 +107,11 @@ class UsersController extends Controller
       $model = $this->findModel($idlogin);
 
       if($model->load(Yii::$app->request->post()) && $model->save()) {
-        return $this->redirect(['/']);
+
+        Yii::$app->session->setFlash('changepass_success');
+
+        return $this->refresh();
+
       } else {
             return $this->render('changepassword',[
                 'model'=> $model,

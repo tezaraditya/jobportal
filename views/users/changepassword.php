@@ -9,6 +9,18 @@ $this->title = 'Change Password';
 
 ?>
 
+<?php if (Yii::$app->session->hasFlash('changepass_success')): ?>
+
+<meta http-equiv="refresh" content="7;url=<?= Yii::$app->homeUrl; ?>"/>
+
+
+
+
+  <div class="alert alert-success" align="center" style="font-size:30px">
+      <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">  Change Password Success. <img src="<?= Yii::$app->homeUrl; ?>/public/loading.GIF">
+    </div>
+
+  <?php else: ?>
 
     <div class="col-lg-3"></div>
 <div class="col-lg-7">
@@ -20,13 +32,10 @@ $this->title = 'Change Password';
    <?php $form = ActiveForm::begin(); ?>
 
   <div class="col-md-12">
-  <?= $form->field($model,'password')->passwordInput(['value'=>'']) ?>
+  <?= $form->field($model,'password')->passwordInput(['value'=>''])->label('New Password') ?>
   </div>
 
-  <div class="col-md-12"><?= $form->field($model, 'verifyCode')->widget(
-      \himiklab\yii2\recaptcha\ReCaptcha::className(),
-      ['siteKey' => '6LchcBUTAAAAAPOjwnURVEkl-oLhcLALibIhazov']
-  ) ?></div>
+
 
   <div class="form-group col-md-12">
         <?= Html::submitButton('Change Password', ['class' => 'btn btn-primary btn-block ']) ?>
@@ -38,3 +47,4 @@ $this->title = 'Change Password';
   </div>
 
   </div>
+<?php endif; ?>

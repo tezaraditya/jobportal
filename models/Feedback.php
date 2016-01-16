@@ -54,6 +54,7 @@ class Feedback extends \yii\db\ActiveRecord
             'name' => 'Your Name',
             'email' => 'Email',
             'phone' => 'Phone',
+            'verifyCode' => 'Are You Human ?',
 
         ];
     }
