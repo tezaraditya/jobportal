@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2016 at 12:32 AM
+-- Generation Time: Jan 17, 2016 at 03:12 PM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS `career` (
   KEY `salary_max` (`salary_max`),
   KEY `email` (`email`),
   KEY `function` (`function`),
-  KEY `location` (`location`)
+  KEY `location` (`location`),
+  KEY `company` (`company`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -55,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `career` (
 --
 
 INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `level`, `experience`, `education`, `degree`, `requirements`, `responsibilities`, `expired_date`) VALUES
-(2, 'IT Manager', 'PT. Jalanbuntu Media', 'hr@jalanbuntu.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', 'Senior', '3 Years', 'Information System', 'Strata Satu', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
-(3, 'Tenant Officer', 'PT. Angin Ribut', 'hrd@anginribut.com', 'Jakarta', '4000000', '5000000', 'Maintenance', 'Senior', '3 Years', 'SMA', 'IPS', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
+(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', 'Senior', '3 Years', 'Information System', 'Strata Satu', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
+(3, 'Tenant Officer', 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Jakarta', '4000000', '5000000', 'Maintenance', 'Senior', '3 Years', 'SMA', 'IPS', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
 
 -- --------------------------------------------------------
 
@@ -375,12 +376,32 @@ INSERT INTO `organizational` (`id_organizational`, `id_user`, `organizational_na
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sendcv`
+--
+
+CREATE TABLE IF NOT EXISTS `sendcv` (
+  `id_sendcv` int(11) NOT NULL AUTO_INCREMENT,
+  `id_career` int(11) NOT NULL,
+  `receiver_name` varchar(50) NOT NULL,
+  `receiver_email` varchar(200) NOT NULL,
+  `subject` varchar(500) NOT NULL,
+  `content` text NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id_sendcv`),
+  KEY `id_career` (`id_career`,`receiver_name`,`receiver_email`,`id_user`),
+  KEY `receiver_name` (`receiver_name`),
+  KEY `receiver_email` (`receiver_email`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
-  `id_number` varchar(50) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `birthplace` varchar(100) NOT NULL,
   `birthdate` date NOT NULL,
@@ -404,15 +425,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `id_number` (`id_user`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_user`, `id_number`, `fullname`, `birthplace`, `birthdate`, `religion`, `gender`, `marital_status`, `nationaly`, `height`, `weight`, `identity_address`, `postal_code`, `domicile_address`, `domicile_postal_code`, `phone`, `email`, `password`, `authKey`, `accessToken`, `join_date`, `active`) VALUES
-(1, '3172020409910005', 'Tezar Aditya', 'Cirebon', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 78, 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', '081314421461', 'tezaraditya@gmail.com', '6f6f33346f32', '52ca6f764e239e4d9e9e67c89fcf0cae6a4e8ac5', '', '2016-01-10 09:57:13', 'y'),
-(4, '', 'Jalan Buntu', '', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', NULL, NULL, '', 'jalanbuntumedia@gmail.com', '3630363034393931', '50769ede613cb93b8300c832af691d80514c4f39', '', '2015-11-26 18:48:09', 'y');
+INSERT INTO `users` (`id_user`, `fullname`, `birthplace`, `birthdate`, `religion`, `gender`, `marital_status`, `nationaly`, `height`, `weight`, `identity_address`, `postal_code`, `domicile_address`, `domicile_postal_code`, `phone`, `email`, `password`, `authKey`, `accessToken`, `join_date`, `active`) VALUES
+(1, 'Tezar Aditya', 'Cirebon', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 78, 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', '081314421461', 'tezaraditya@gmail.com', '6f6f33346f32', '52ca6f764e239e4d9e9e67c89fcf0cae6a4e8ac5', '', '2016-01-17 05:56:22', 'y'),
+(4, 'Jalan Buntu', 'Jakarta', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', '', '', '', 'manystick@gmail.com', '6f6f33346f32', 'c99b1d9f948dd097f32afb87cfdf2bbb1cba9ce9', '', '2016-01-15 07:30:16', 'y'),
+(5, 'Jalan Buntu', 'Jakarta', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', '', '', '', 'jalanbuntumedia@gmail.com', '6f6f33346f32', '50769ede613cb93b8300c832af691d80514c4f39', '', '2016-01-15 13:00:45', 'y'),
+(6, 'dadadada', '', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', NULL, NULL, '', 'dadada@sdsd', '64616461646164', '3a6eaf88245895ffc422a421cd47059a8cca3537', '', '2016-01-15 13:22:42', 'y');
 
 -- --------------------------------------------------------
 
@@ -469,6 +492,15 @@ ALTER TABLE `education`
 --
 ALTER TABLE `organizational`
   ADD CONSTRAINT `organizational_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `sendcv`
+--
+ALTER TABLE `sendcv`
+  ADD CONSTRAINT `sendcv_ibfk_1` FOREIGN KEY (`id_career`) REFERENCES `career` (`id_career`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sendcv_ibfk_2` FOREIGN KEY (`receiver_email`) REFERENCES `career` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sendcv_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sendcv_ibfk_4` FOREIGN KEY (`receiver_name`) REFERENCES `career` (`company`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `working`
