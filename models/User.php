@@ -9,7 +9,6 @@ use app\models\Users as TUsers;
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
     public $id_user;
-    public $id_number;
     public $fullname;
     public $birthplace;
     public $birthdate;
@@ -31,7 +30,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public $join_date;
     public $active;
 
-    
+
 
     /**
      * @inheritdoc
@@ -39,12 +38,12 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public static function findIdentity($id_user)
     {
         $TableUsers = TUsers::find()->where(["id_user"=>$id_user])->one();
-		
+
 		if(!count($TableUsers)) {
-			
+
 			return null;
 		}
-		
+
 		return new static($TableUsers);
     }
 
@@ -54,12 +53,12 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public static function findIdentityByAccessToken($token, $type = null)
     {
       $TableUsers = TUsers::find()->where(["accessToken"=>$token])->one();
-		
+
 		if(!count($TableUsers)) {
-			
+
 			return null;
 		}
-		
+
 		return new static($TableUsers);
     }
 
@@ -72,12 +71,12 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public static function findByUsername($email)
     {
       $TableUsers = TUsers::find()->where(["email"=>$email,'active'=>'y'])->one();
-		
+
 		if(!count($TableUsers)) {
-			
+
 			return null;
 		}
-		
+
 		return new static($TableUsers);
     }
 

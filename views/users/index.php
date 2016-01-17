@@ -30,7 +30,6 @@ $this->title = Yii::t('app', 'Personal Data');
 
     <?php $form = ActiveForm::begin(); ?>
 <div class="col-md-12 alert alert-info">
-	<div class="col-md-6"> <?= $form->field($model, 'id_number')->textInput() ?></div>
 
     <div class="col-md-6"><?= $form->field($model, 'fullname')->textInput(['maxlength' => true]) ?> </div>
 
@@ -46,6 +45,8 @@ $this->title = Yii::t('app', 'Personal Data');
 	],
 
 ])->textInput() ?> </div>
+
+  <div class="col-md-6"> <?= $form->field($model, 'nationaly')->textInput() ?> </div>
 
 
 	</div>
@@ -76,7 +77,7 @@ $this->title = Yii::t('app', 'Personal Data');
 
    <div class="col-md-12 alert alert-danger">
 
-    <div class="col-md-12"> <?= $form->field($model, 'nationaly')->textInput() ?> </div>
+
 
 
 

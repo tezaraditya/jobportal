@@ -26,7 +26,7 @@ class Users extends \yii\db\ActiveRecord
             [['birthdate', 'join_date'], 'safe'],
             [['gender', 'marital_status', 'identity_address', 'domicile_address', 'active'], 'string'],
             [['height', 'weight'], 'integer'],
-            [['id_number', 'nationaly'], 'string', 'max' => 50],
+            [['nationaly'], 'string', 'max' => 50],
             [['birthplace'], 'string', 'max' => 100],
             [['email','authKey'], 'unique'],
             [['religion', 'postal_code', 'domicile_postal_code', 'phone'], 'string', 'max' => 20],
@@ -42,7 +42,6 @@ class Users extends \yii\db\ActiveRecord
     {
         return [
             'id_user' => 'Id User',
-            'id_number' => 'Id Number',
             'fullname' => 'Fullname',
             'birthplace' => 'Birthplace',
             'birthdate' => 'Birthdate',
