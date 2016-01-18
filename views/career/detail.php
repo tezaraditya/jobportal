@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Career */
 
@@ -15,7 +15,38 @@ $this->title = $model->position.' at '.$model->company;
   <div class="well">  <center>
     <h1><?= Html::encode($model->position) ?></h1>
     <p>at <?= Html::encode($model->company) ?></p><hr/>
-    <p><?= Html::a('Send Your CV','',['class'=>'btn btn-primary btn-lg']) ?></p>
+
+
+    <p>
+
+      <div class="sendcv-form">
+
+          <?php $form = ActiveForm::begin(); ?>
+
+          <?= $form->field($model, 'id_career')->textInput() ?>
+
+          <?= $form->field($model, 'receiver_name')->textInput(['maxlength' => true,'value'=>$model->company]) ?>
+
+          <?= $form->field($model, 'receiver_email')->textInput(['maxlength' => true,'value'=>$model->email]) ?>
+
+          <?= $form->field($model, 'subject')->textInput(['maxlength' => true,'value'=>$model->position]) ?>
+
+          <?php //$form->field($model, 'content')->textarea(['rows' => 6]) ?>
+
+          <?= $form->field($model, 'id_user')->textInput(['value'=>Yii::$app->user->id]) ?>
+
+          <div class="form-group">
+              <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+          </div>
+
+          <?php ActiveForm::end(); ?>
+
+      </div>
+
+      <?= Html::a('Send Your CV','',['class'=>'btn btn-primary btn-lg']) ?>
+
+
+    </p>
   </center></div>
   <!-- List group -->
   <ul class="list-group">
@@ -50,7 +81,7 @@ $this->title = $model->position.' at '.$model->company;
 <div class="panel-body"><?= Html::encode($model->responsibilities) ?></div>
 </div>
 
-<p><?= Html::a(' Send Your CV','/',['class'=>'btn btn-primary btn-lg btn-block']) ?></p>
+<p><?= Html::a(' Send Your CV','',['class'=>'btn btn-primary btn-lg btn-block']) ?></p>
 
 
 </div>

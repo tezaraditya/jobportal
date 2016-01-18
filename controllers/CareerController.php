@@ -51,9 +51,30 @@ class CareerController extends Controller
      */
     public function actionDetail($id)
     {
-        return $this->render('detail', [
-            'model' => $this->findModel($id),
-        ]);
+       $sendcvModel = new \app\models\Sendcv();
+
+       if($sendcvModel->load(Yii::$app->request->post())) {
+
+         Yii::$app->mailer->compose()
+           ->setFrom('resumeditorcom@gmail.com')
+           ->setTo($sendcvModel->receiver_email)
+           ->setSubject($sendcvModel->subject)
+           ->setHtmlBody("<h1>Congratulation</h1>")
+           ->send();
+
+            return $this->redirect(['facebook.com']);
+
+       } else {
+
+         return $this->render('detail', [
+             'model' => $this->findModel($id),
+             'sendcvModel' => $sendcvModel,
+         ]);
+
+
+       }
+
+
     }
 
 
