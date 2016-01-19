@@ -12,7 +12,6 @@ use Yii;
  * @property string $receiver_name
  * @property string $receiver_email
  * @property string $subject
- * @property string $content
  * @property integer $id_user
  *
  * @property Career $idCareer
@@ -36,9 +35,8 @@ class Sendcv extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_career', 'receiver_name', 'receiver_email', 'subject', 'content', 'id_user'], 'required'],
+            [['id_career', 'receiver_name', 'receiver_email', 'subject', 'id_user'], 'required'],
             [['id_career', 'id_user'], 'integer'],
-            [['content'], 'string'],
             [['receiver_name'], 'string', 'max' => 50],
             [['receiver_email'], 'string', 'max' => 200],
             [['subject'], 'string', 'max' => 500]
@@ -56,7 +54,6 @@ class Sendcv extends \yii\db\ActiveRecord
             'receiver_name' => 'Receiver Name',
             'receiver_email' => 'Receiver Email',
             'subject' => 'Subject',
-            'content' => 'Content',
             'id_user' => 'Id User',
         ];
     }
