@@ -19,6 +19,12 @@ $this->title = $model->position.' at '.$model->company;
 
     <p>
 
+<?php if (Yii::$app->session->hasFlash('sendCv_success')): ?>
+
+<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> Apply Success</div>
+
+  <?php else: ?>
+
       <div class="sendcv-form">
 
           <?php $form = ActiveForm::begin(); ?>
@@ -31,8 +37,6 @@ $this->title = $model->position.' at '.$model->company;
 
           <?= $form->field($sendcvModel, 'subject')->hiddenInput(['maxlength' => true,'value'=>$model->position])->label(false) ?>
 
-          <?= $form->field($sendcvModel, 'content')->textarea(['rows' => 6]) ?>
-
           <?= $form->field($sendcvModel, 'id_user')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
 
           <div class="form-group">
@@ -43,7 +47,7 @@ $this->title = $model->position.' at '.$model->company;
 
       </div>
 
-
+<?php endif; ?>
 
 
     </p>
