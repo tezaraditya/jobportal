@@ -55,14 +55,16 @@ class CareerController extends Controller
 
        if($sendcvModel->load(Yii::$app->request->post())) {
 
-         Yii::$app->mailer->compose()
+         Yii::$app->mailer->compose(['html' => '@app/mail/layouts/cv',])
            ->setFrom('resumeditorcom@gmail.com')
            ->setTo($sendcvModel->receiver_email)
            ->setSubject($sendcvModel->subject)
-           ->setHtmlBody("<h1>Congratulation</h1>")
+           //->setHtmlBody($sendcvModel->content)
            ->send();
 
-            return $this->redirect(['facebook.com']);
+            $sendcvModel->save();
+            Yii::$app->session->setFlash('sendCv_success');
+            return $this->refresh();
 
        } else {
 

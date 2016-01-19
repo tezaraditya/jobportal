@@ -23,27 +23,27 @@ $this->title = $model->position.' at '.$model->company;
 
           <?php $form = ActiveForm::begin(); ?>
 
-          <?= $form->field($model, 'id_career')->textInput() ?>
+          <?= $form->field($sendcvModel, 'id_career')->hiddenInput(['value'=>$model->id_career])->label(false) ?>
 
-          <?= $form->field($model, 'receiver_name')->textInput(['maxlength' => true,'value'=>$model->company]) ?>
+          <?= $form->field($sendcvModel, 'receiver_name')->hiddenInput(['maxlength' => true,'value'=>$model->company])->label(false) ?>
 
-          <?= $form->field($model, 'receiver_email')->textInput(['maxlength' => true,'value'=>$model->email]) ?>
+          <?= $form->field($sendcvModel, 'receiver_email')->hiddenInput(['maxlength' => true,'value'=>$model->email])->label(false) ?>
 
-          <?= $form->field($model, 'subject')->textInput(['maxlength' => true,'value'=>$model->position]) ?>
+          <?= $form->field($sendcvModel, 'subject')->hiddenInput(['maxlength' => true,'value'=>$model->position])->label(false) ?>
 
-          <?php //$form->field($model, 'content')->textarea(['rows' => 6]) ?>
+          <?= $form->field($sendcvModel, 'content')->textarea(['rows' => 6]) ?>
 
-          <?= $form->field($model, 'id_user')->textInput(['value'=>Yii::$app->user->id]) ?>
+          <?= $form->field($sendcvModel, 'id_user')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
 
           <div class="form-group">
-              <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+              <?= Html::submitButton('Send Your CV', ['class' =>'btn btn-primary btn-lg']) ?>
           </div>
 
           <?php ActiveForm::end(); ?>
 
       </div>
 
-      <?= Html::a('Send Your CV','',['class'=>'btn btn-primary btn-lg']) ?>
+
 
 
     </p>
@@ -81,7 +81,6 @@ $this->title = $model->position.' at '.$model->company;
 <div class="panel-body"><?= Html::encode($model->responsibilities) ?></div>
 </div>
 
-<p><?= Html::a(' Send Your CV','',['class'=>'btn btn-primary btn-lg btn-block']) ?></p>
 
 
 </div>

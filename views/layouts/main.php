@@ -22,13 +22,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <script>
-
-  $zopim(function() {
-    $zopim.livechat.window.hide();
-  });
-
-</script>
+  
 </head>
 <body>
 <?php $this->beginBody() ?>
