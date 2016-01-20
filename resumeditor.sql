@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2016 at 02:46 PM
+-- Generation Time: Jan 21, 2016 at 03:11 AM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `resumeditor`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id_admin` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(300) NOT NULL,
+  `authKey` varchar(100) NOT NULL,
+  `accessToken` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_admin`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -102,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `education` (
   `gpa` varchar(11) NOT NULL,
   PRIMARY KEY (`id_education`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `education`
@@ -112,7 +128,8 @@ INSERT INTO `education` (`id_education`, `id_user`, `degree`, `institution`, `ma
 (3, 1, 'Strata Satu', 'STMIK Jayabaya', 'Sistem Informasi', '2009-08-28', '2013-09-26', '3.13'),
 (4, 1, 'SMA', 'SMA PGRI 12', 'IPS', '2006-07-03', '2009-07-06', '6.7'),
 (5, 1, 'SLTP', 'SLTP Negeri 65 Jakarta', '-', '2003-07-01', '2006-08-01', '6.17'),
-(6, 1, 'SD', 'SD Negeri Kebon Bawang 03 Pagi Jakarta ', '-', '1997-07-01', '2003-08-01', '8.15');
+(6, 1, 'SD', 'SD Negeri Kebon Bawang 03 Pagi Jakarta ', '-', '1997-07-01', '2003-08-01', '8.15'),
+(7, 5, 'Strata Satu', 'Universitas Indonesia', 'Teknik Informatika', '2009-08-17', '2013-09-26', '3.37');
 
 -- --------------------------------------------------------
 
@@ -393,15 +410,7 @@ CREATE TABLE IF NOT EXISTS `sendcv` (
   KEY `receiver_name` (`receiver_name`),
   KEY `receiver_email` (`receiver_email`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
-
---
--- Dumping data for table `sendcv`
---
-
-INSERT INTO `sendcv` (`id_sendcv`, `id_career`, `receiver_name`, `receiver_email`, `subject`, `id_user`, `id_composite`) VALUES
-(27, 3, 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Tenant Officer', 1, 31),
-(28, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1, 21);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -443,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id_user`, `fullname`, `birthplace`, `birthdate`, `religion`, `gender`, `marital_status`, `nationaly`, `height`, `weight`, `identity_address`, `postal_code`, `domicile_address`, `domicile_postal_code`, `phone`, `email`, `password`, `authKey`, `accessToken`, `join_date`, `active`) VALUES
 (1, 'Tezar Aditya', 'Cirebon', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 78, 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', 'Jalan Kebon Bawang XV C No 6 , Kelurahan Kebon Bawang , Kecamatan Tanjung Priok , Jakarta Utara', '14320', '081314421461', 'tezaraditya@gmail.com', '6f6f33346f32', '52ca6f764e239e4d9e9e67c89fcf0cae6a4e8ac5', '', '2016-01-17 05:56:22', 'y'),
 (4, 'Jalan Buntu', 'Jakarta', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', '', '', '', 'manystick@gmail.com', '6f6f33346f32', 'c99b1d9f948dd097f32afb87cfdf2bbb1cba9ce9', '', '2016-01-15 07:30:16', 'y'),
-(5, 'Jalan Buntu', 'Jakarta', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', '', '', '', 'jalanbuntumedia@gmail.com', '6f6f33346f32', '50769ede613cb93b8300c832af691d80514c4f39', '', '2016-01-15 13:00:45', 'y'),
+(5, 'Jalan Buntu', 'Jakarta', '1991-09-04', 'Islam', 'male', 'single', 'Indonesia', 175, 85, 'Jakarta', '14320', 'Jakarta', '14320', '081314421461', 'jalanbuntumedia@gmail.com', '6f6f33346f32', '50769ede613cb93b8300c832af691d80514c4f39', '', '2016-01-20 16:08:15', 'y'),
 (6, 'dadadada', '', '0000-00-00', '', 'male', 'single', '', 0, 0, '', '', NULL, NULL, '', 'dadada@sdsd', '64616461646164', '3a6eaf88245895ffc422a421cd47059a8cca3537', '', '2016-01-15 13:22:42', 'y');
 
 -- --------------------------------------------------------
