@@ -33,6 +33,8 @@ $this->title = Yii::t('app', 'Personal Data');
 
     <div class="col-md-6"><?= $form->field($model, 'fullname')->textInput(['maxlength' => true]) ?> </div>
 
+    <div class="col-md-6"> <?= $form->field($model, 'nationaly')->textInput() ?> </div>
+
    <div class="col-md-6"> <?= $form->field($model, 'birthplace')->textInput(['maxlength' => true]) ?> </div>
 
    <div class="col-md-6"> <?= $form->field($model, 'birthdate')->widget(\yii\jui\DatePicker::classname(), [
@@ -46,7 +48,7 @@ $this->title = Yii::t('app', 'Personal Data');
 
 ])->textInput() ?> </div>
 
-  <div class="col-md-6"> <?= $form->field($model, 'nationaly')->textInput() ?> </div>
+
 
 
 	</div>

@@ -31,6 +31,7 @@ $applySuccessMessage = '<button type="button" class="btn btn-default btn-lg" dis
 <?php
 //query check data sendcv
 $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->id])->count();
+
 ?>
 
 
@@ -42,9 +43,8 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
 <?= $applySuccessMessage; ?>
 
-
 <?php
-   } else {
+   } else  if(!Yii::$app->user->isGuest){
 
  ?>
 
@@ -74,24 +74,28 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
       </div>
 
-      <?php } ?>
+
+
+      <?php } else if(Yii::$app->user->isGuest) { ?>
+
+          <div class="alert alert-warning">Please <u><b><?= Html::a('Login',['site/login']) ?></b></u> to apply for this job</div>
+
+        <?php } ?>
 
 <?php endif; ?>
+
+
+<div><?= \app\models\Sendcv::find()->where(['id_career'=>$model->id_career])->count(); ?> Applicants</div>
 
 
     </p>
   </center></div>
   <!-- List group -->
   <ul class="list-group">
-    <li class="list-group-item list-group-item-danger">  <center> Expired Date <h4><?= Html::encode(date('j F Y',strtotime($model->expired_date))) ?></h4></center></li>
-    <li class="list-group-item list-group-item-success">     <center>Job Function<h4><span class="glyphicon glyphicon-paperclip"></span> <?= Html::encode($model->function) ?></h4>    </center></li>
-    <li class="list-group-item list-group-item-warning">     <center>Experience <h4><span class="glyphicon glyphicon-send"></span>  <?= Html::encode($model->experience) ?> </h4>     </center></li>
-    <li class="list-group-item list-group-item-info">     <center>Level<h4> <span class="glyphicon glyphicon-star"></span> <?= Html::encode($model->level) ?> </h4>     </center></li>
 
-    <li class="list-group-item list-group-item-success">     <center>Salary Range ( IDR )<h4><?= number_format($model->salary_min,"0",",",".") ?> - <?= number_format($model->salary_max,"0",",",".") ?></h4></center></li>
-    <li class="list-group-item list-group-item-info">     <center>Education <h4><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->education) ?> </h4>     </center></li>
-    <li class="list-group-item list-group-item-info">     <center>Degree  <h4><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->degree) ?> </h4>     </center></li>
-      <li class="list-group-item list-group-item-warning">     <center>Location<h4> <span class="glyphicon glyphicon-map-marker"></span> <?= Html::encode($model->location) ?> </h4>     </center></li>
+
+
+
 
   </ul>
 
@@ -102,6 +106,25 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
 
   <!-- Default panel contents -->
+<table class="table table-striped table-bordered">
+  <tbody>
+
+
+<tr>
+<td class="col-md-6"><span class="glyphicon glyphicon-map-marker"></span> <?= Html::encode($model->location) ?> </td>
+<td class="col-md-6"><b>Rp</b> <?= number_format($model->salary_min,"0",",",".") ?> - <?= number_format($model->salary_max,"0",",",".") ?></td>
+</tr>
+<tr>
+<td class="col-md-6"><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->degree) ?></td>
+<td class="col-md-6"><span class="glyphicon glyphicon-paperclip"></span> <?= Html::encode($model->function) ?></td>
+</tr>
+<tr>
+<td class="col-md-6"><span class="glyphicon glyphicon-send"></span> <?= Html::encode($model->experience) ?></td>
+<td class="col-md-6"><span class="glyphicon glyphicon-off"></span> <?= Html::encode(date('j F Y',strtotime($model->expired_date))) ?></td>
+</tr>
+</tbody>
+</table>
+
 
 
 <div class="panel panel-default">

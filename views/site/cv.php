@@ -40,7 +40,7 @@ $this->title = Yii::$app->params['siteName'];
         <h4 class="modal-title" id="myModalLabel">Upload Photos</h4>
       </div>
       <div class="modal-body">
-        
+
 		<?php
  echo \kato\DropZone::widget([
        'options' => [
@@ -56,21 +56,21 @@ $this->title = Yii::$app->params['siteName'];
        'clientEvents' => [
            'complete' => "function(file){console.log(file)}",
            'removedfile' => "function(file) {
-    var name = file.name;        
+    var name = file.name;
     $.ajax({
         type: 'POST',
         url: 'users/deletepp',
         dataType: 'png'
     });
 var _ref;
-return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;        
+return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
               }",
-			  
+
 			  'thumbnailWidth' =>'150',
 
        ],
    ]); ?>
-		
+
       </div>
       <div class="modal-footer">
 	  <?= Html::a('Save Photos',['/'],['class'=>'btn btn-lg btn-success btn-block']) ?>
@@ -93,89 +93,89 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 </div>
 <div class="col-md-9">
  <table class="table table-striped">
-    
+
       <tbody>
         <tr>
           <td>Full Name : <?= $data->fullname ?></td>
         </tr>
-		
+
 		<tr>
           <td>Place, Date Of Birth : <?= $data->birthplace ?>, <?= date("j F Y",strtotime($data->birthdate)) ?></td>
-     
+
         </tr>
-		
+
 		<tr>
           <td>Gender : <?= $data->gender ?></td>
-       
+
         </tr>
-		
+
 		<tr>
           <td>Religion : <?= $data->religion ?></td>
-    
+
         </tr>
 	    <tr>
           <td>Marital Status : <?= $data->marital_status ?></td>
-         
+
         </tr>
-		
-	
-		
+
+
+
 		</tbody>
 		</table>
 		</div>
-		
+
 
 
 <div class="col-md-12">
 
 
-  
+
 
   <table class="table table-striped">
-    
+
       <tbody>
-        
+
 			<tr>
           <td>Nationaly : <?= $data->nationaly ?></td>
-   
+
         </tr>
-		
+
 		<tr>
           <td>Height : <?= $data->height ?> Cm</td>
-    
+
         </tr>
-		
+
 		<tr>
           <td>Weight : <?= $data->weight ?> Kg</td>
-    
+
         </tr>
-		
-		
-		
-	
-       
+
+
+
+
+
 	   <tr>
           <td>Address : <?= $data->identity_address ?></td>
-        
+
         </tr>
-		
+
 		<tr>
           <td>Postal Code : <?= $data->postal_code ?></td>
-         
+
         </tr>
-   
-		 
-		
+
+
+
 		<tr>
           <td>Phone : <?= $data->phone ?></td>
-   
+
         </tr>
-		
+
 		<tr>
           <td>Email : <?= $data->email ?></td>
-      
+
         </tr>
-     
+
       </tbody>
     </table>
   </div>
@@ -190,12 +190,12 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 <div class="col-md-12">
 
 <h4><?= Html::a('Education <span class="glyphicon glyphicon-edit"></span>',['/education/']) ?></h4>
-  
+
 
 
 
 <table class="table table-striped">
-    
+
       <tbody>
 	  <?php foreach($education->getModels() as $edu) { ?>
         <tr>
@@ -203,20 +203,20 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 		</tr>
 		     <?php } ?>
 
-		
+
 	 </tbody>
     </table>
 	</div>
-	
-	
-	
+
+
+
 <div class="col-md-12">
 
 <h4><?= Html::a('Certifications and Awards <span class="glyphicon glyphicon-edit"></span>',['/certification/']) ?></h4>
 
 
 
-	
+
 	<table class="table table-striped">
 	<tbody>
 	  <?php foreach($certification->getModels() as $cert) { ?>
@@ -225,21 +225,21 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 		</tr>
 		     <?php } ?>
 
-		
+
 	 </tbody>
     </table>
 	</div>
-	
-	
-	
+
+
+
 	<div class="col-md-12">
 
 	<h4><?= Html::a('Organizational Experiences <span class="glyphicon glyphicon-edit"></span>',['/organizational/']) ?></h4>
 
 
-	
 
-	
+
+
 	<table class="table table-striped">
 	<tbody>
 	  <?php foreach($organizational->getModels() as $org) { ?>
@@ -248,19 +248,19 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 		</tr>
 		     <?php } ?>
 
-		
+
 	 </tbody>
     </table>
 	</div>
 
-	
+
 		<div class="col-md-12">
 
 	<h4><?= Html::a('Working Experiences <span class="glyphicon glyphicon-edit"></span>',['/working/']) ?></h4>
 
 
 
-	
+
 	<table class="table table-striped">
 	<tbody>
 	  <?php foreach($working->getModels() as $work) { ?>
@@ -269,13 +269,13 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 		</tr>
 		     <?php } ?>
 
-		
+
 	 </tbody>
     </table>
 	</div>
 
-	
-	
+
+
   </div>
 </div>
 

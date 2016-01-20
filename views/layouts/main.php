@@ -22,7 +22,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-  
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -64,7 +64,6 @@ AppAsset::register($this);
                        'items' => [
 
                            ['label' => 'Change Password', 'url' => ['/users/changepassword']],
-                           ['label'=>'History Apply', 'url'=>['/users/historyapply']],
                            ['label' => 'Logout','url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
            ],
                   ],
