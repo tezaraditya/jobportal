@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2016 at 03:54 AM
+-- Generation Time: Jan 20, 2016 at 02:46 PM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -386,32 +386,22 @@ CREATE TABLE IF NOT EXISTS `sendcv` (
   `receiver_email` varchar(200) NOT NULL,
   `subject` varchar(500) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `id_composite` int(11) NOT NULL,
   PRIMARY KEY (`id_sendcv`),
+  UNIQUE KEY `id_unique_send` (`id_composite`),
   KEY `id_career` (`id_career`,`receiver_name`,`receiver_email`,`id_user`),
   KEY `receiver_name` (`receiver_name`),
   KEY `receiver_email` (`receiver_email`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `sendcv`
 --
 
-INSERT INTO `sendcv` (`id_sendcv`, `id_career`, `receiver_name`, `receiver_email`, `subject`, `id_user`) VALUES
-(7, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(8, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(9, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(10, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(11, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(12, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(13, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(14, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(15, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(16, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(17, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(18, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(19, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1),
-(20, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1);
+INSERT INTO `sendcv` (`id_sendcv`, `id_career`, `receiver_name`, `receiver_email`, `subject`, `id_user`, `id_composite`) VALUES
+(27, 3, 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Tenant Officer', 1, 31),
+(28, 2, 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'IT Manager', 1, 21);
 
 -- --------------------------------------------------------
 
