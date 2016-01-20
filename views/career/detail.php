@@ -3,10 +3,13 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\widgets\ActiveForm;
+use yii\data\ActiveDataProvider;
 /* @var $this yii\web\View */
 /* @var $model app\models\Career */
 
 $this->title = $model->position.' at '.$model->company;
+
+$applySuccessMessage = '<button type="button" class="btn btn-default btn-lg" disabled="disabled"><span class="glyphicon glyphicon-ok"></span> Apply Success</button>';
 
 ?>
 
@@ -21,9 +24,31 @@ $this->title = $model->position.' at '.$model->company;
 
 <?php if (Yii::$app->session->hasFlash('sendCv_success')): ?>
 
-<div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> Apply Success</div>
+<?= $applySuccessMessage; ?>
 
   <?php else: ?>
+
+<?php
+//query check data sendcv
+$checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->id])->count();
+?>
+
+
+<?php
+  //check data sendcv
+   if($checkSendCV > 0) {
+?>
+
+
+<?= $applySuccessMessage; ?>
+
+
+<?php
+   } else {
+
+ ?>
+
+
 
       <div class="sendcv-form">
 
@@ -39,6 +64,8 @@ $this->title = $model->position.' at '.$model->company;
 
           <?= $form->field($sendcvModel, 'id_user')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
 
+          <?= $form->field($sendcvModel, 'id_composite')->hiddenInput(['value'=>$model->id_career.Yii::$app->user->id])->label(false) ?>
+
           <div class="form-group">
               <?= Html::submitButton('Send Your CV', ['class' =>'btn btn-primary btn-lg']) ?>
           </div>
@@ -46,6 +73,8 @@ $this->title = $model->position.' at '.$model->company;
           <?php ActiveForm::end(); ?>
 
       </div>
+
+      <?php } ?>
 
 <?php endif; ?>
 
