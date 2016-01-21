@@ -30,7 +30,7 @@ $applySuccessMessage = '<button type="button" class="btn btn-default btn-lg" dis
 
 <?php
 //query check data sendcv
-$checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->identity->id])->count();
+$checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->id])->count();
 
 ?>
 
