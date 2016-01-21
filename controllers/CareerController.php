@@ -56,8 +56,10 @@ class CareerController extends Controller
        if($sendcvModel->load(Yii::$app->request->post())) {
 
          Yii::$app->mailer->compose(['html' => '@app/mail/layouts/cv',])
-           ->setFrom('resumeditorcom@gmail.com')
+           ->setFrom(['resumeditorcom@gmail.com'=>'Resumeditor.com'])
            ->setTo($sendcvModel->receiver_email)
+           ->setReplyTo(Yii::$app->user->identity->email)
+           ->setCC(Yii::$app->user->identity->email)
            ->setSubject($sendcvModel->subject)
            //->setHtmlBody($sendcvModel->content)
            ->send();

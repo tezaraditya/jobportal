@@ -30,7 +30,7 @@ $applySuccessMessage = '<button type="button" class="btn btn-default btn-lg" dis
 
 <?php
 //query check data sendcv
-$checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->id])->count();
+$checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_career.Yii::$app->user->identity->id])->count();
 
 ?>
 
@@ -60,11 +60,11 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
           <?= $form->field($sendcvModel, 'receiver_email')->hiddenInput(['maxlength' => true,'value'=>$model->email])->label(false) ?>
 
-          <?= $form->field($sendcvModel, 'subject')->hiddenInput(['maxlength' => true,'value'=>$model->position])->label(false) ?>
+          <?= $form->field($sendcvModel, 'subject')->hiddenInput(['maxlength' => true,'value'=>Yii::$app->user->identity->fullname.''.' Melamar Pekerjaan di Perusahaan Anda Melalui Resumeditor.com dengan Posisi '.''.$model->position])->label(false) ?>
 
-          <?= $form->field($sendcvModel, 'id_user')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
+          <?= $form->field($sendcvModel, 'id_user')->hiddenInput(['value'=>Yii::$app->user->identity->id])->label(false) ?>
 
-          <?= $form->field($sendcvModel, 'id_composite')->hiddenInput(['value'=>$model->id_career.Yii::$app->user->id])->label(false) ?>
+          <?= $form->field($sendcvModel, 'id_composite')->hiddenInput(['value'=>$model->id_career.Yii::$app->user->identity->id])->label(false) ?>
 
           <div class="form-group">
               <?= Html::submitButton('Send Your CV', ['class' =>'btn btn-primary btn-lg']) ?>
