@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 21, 2016 at 11:54 PM
+-- Generation Time: Jan 25, 2016 at 12:45 AM
 -- Server version: 5.5.46-0ubuntu0.14.04.2
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -34,7 +34,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `accessToken` varchar(100) NOT NULL,
   PRIMARY KEY (`id_admin`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `password`, `authKey`, `accessToken`) VALUES
+(1, 'adit', '746f6f72', '2e445949d370543ad32c166c38b1278d67316509', '');
 
 -- --------------------------------------------------------
 
