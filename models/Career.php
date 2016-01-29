@@ -18,7 +18,6 @@ use Yii;
  * @property string $level
  * @property string $experience
  * @property string $education
- * @property string $degree
  * @property string $requirements
  * @property string $responsibilities
  * @property string $expired_date
@@ -41,10 +40,10 @@ class Career extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['position', 'company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'level', 'experience', 'education', 'degree', 'requirements', 'responsibilities'], 'required'],
+            [['position', 'company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'level', 'experience', 'education', 'requirements', 'responsibilities'], 'required'],
             [['requirements', 'responsibilities'], 'string'],
             [['expired_date'],'safe'],
-            [['position', 'company', 'location', 'function', 'level', 'experience', 'education', 'degree'], 'string', 'max' => 100],
+            [['position', 'company', 'location', 'function', 'level', 'experience', 'education'], 'string', 'max' => 100],
             [['email'], 'string', 'max' => 200],
             [['salary_min', 'salary_max'], 'string', 'max' => 20]
         ];
@@ -67,7 +66,6 @@ class Career extends \yii\db\ActiveRecord
             'level' => 'Level',
             'experience' => 'Experience',
             'education' => 'Education',
-            'degree' => 'Degree',
             'requirements' => 'Requirements',
             'responsibilities' => 'Responsibilities',
             'expired_date' => 'Expired Date'

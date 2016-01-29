@@ -115,7 +115,7 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 <td class="col-md-6"><b>Rp</b> <?= number_format($model->salary_min,"0",",",".") ?> - <?= number_format($model->salary_max,"0",",",".") ?></td>
 </tr>
 <tr>
-<td class="col-md-6"><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->degree) ?></td>
+<td class="col-md-6"><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->education) ?></td>
 <td class="col-md-6"><span class="glyphicon glyphicon-paperclip"></span> <?= Html::encode($model->function) ?></td>
 </tr>
 <tr>

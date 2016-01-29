@@ -19,7 +19,7 @@ class CareerSearch extends Career
     {
         return [
             [['id_career'], 'integer'],
-            [['position', 'company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'level', 'experience', 'education', 'degree', 'requirements', 'responsibilities','expired_date'], 'safe'],
+            [['position', 'company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'experience', 'education', 'requirements', 'responsibilities','expired_date'], 'safe'],
         ];
     }
 
@@ -66,10 +66,8 @@ class CareerSearch extends Career
             ->andFilterWhere(['like', 'salary_min', $this->salary_min])
             ->andFilterWhere(['like', 'salary_max', $this->salary_max])
             ->andFilterWhere(['like', 'function', $this->function])
-            ->andFilterWhere(['like', 'level', $this->level])
             ->andFilterWhere(['like', 'experience', $this->experience])
             ->andFilterWhere(['like', 'education', $this->education])
-            ->andFilterWhere(['like', 'degree', $this->degree])
             ->andFilterWhere(['like', 'requirements', $this->requirements])
             ->andFilterWhere(['like', 'responsibilities', $this->responsibilities])
             ->andFilterWhere(['like','expired_date', $this->expired_date]);
