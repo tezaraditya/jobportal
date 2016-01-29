@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2016 at 12:45 AM
--- Server version: 5.5.46-0ubuntu0.14.04.2
+-- Generation Time: Jan 30, 2016 at 05:27 AM
+-- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -58,15 +58,13 @@ CREATE TABLE IF NOT EXISTS `career` (
   `salary_min` varchar(20) NOT NULL,
   `salary_max` varchar(20) NOT NULL,
   `function` varchar(100) NOT NULL,
-  `level` varchar(100) NOT NULL,
   `experience` varchar(100) NOT NULL,
   `education` varchar(100) NOT NULL,
-  `degree` varchar(100) NOT NULL,
   `requirements` text NOT NULL,
   `responsibilities` text NOT NULL,
   `expired_date` date NOT NULL,
   PRIMARY KEY (`id_career`),
-  KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`level`,`experience`,`education`,`degree`),
+  KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`experience`,`education`),
   KEY `salary_max` (`salary_max`),
   KEY `email` (`email`),
   KEY `function` (`function`),
@@ -78,9 +76,9 @@ CREATE TABLE IF NOT EXISTS `career` (
 -- Dumping data for table `career`
 --
 
-INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `level`, `experience`, `education`, `degree`, `requirements`, `responsibilities`, `expired_date`) VALUES
-(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', 'Senior', '3 Years', 'Information System', 'Strata Satu', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
-(3, 'Tenant Officer', 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Jakarta', '4000000', '5000000', 'Maintenance', 'Senior', '3 Years', 'SMA', 'IPS', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
+INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `experience`, `education`, `requirements`, `responsibilities`, `expired_date`) VALUES
+(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', '3 Years', 'S1', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
+(3, 'Tenant Officer', 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Jakarta', '4000000', '5000000', 'Maintenance', '3 Years', 'SMA', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
 
 -- --------------------------------------------------------
 
@@ -417,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `sendcv` (
   KEY `receiver_name` (`receiver_name`),
   KEY `receiver_email` (`receiver_email`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
