@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 30, 2016 at 05:27 AM
+-- Generation Time: Feb 02, 2016 at 03:44 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `accessToken` varchar(100) NOT NULL,
   PRIMARY KEY (`id_admin`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `admin`
@@ -70,15 +70,15 @@ CREATE TABLE IF NOT EXISTS `career` (
   KEY `function` (`function`),
   KEY `location` (`location`),
   KEY `company` (`company`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `career`
 --
 
 INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `experience`, `education`, `requirements`, `responsibilities`, `expired_date`) VALUES
-(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5000000', '7000000', 'TI, Web Developer', '3 Years', 'S1', '- Expert in More Programming Language\r\n- Expert in IT Management \r\n- Expert in More Database System', '- Managing All About IT Developer and Infrastructure', '2015-12-31'),
-(3, 'Tenant Officer', 'PT. Angin Ribut', 'jalanbuntumedia@gmail.com', 'Jakarta', '4000000', '5000000', 'Maintenance', '3 Years', 'SMA', '- Jujur\r\n- Interaktif\r\n- Min Pasif Berbahasa Inggris\r\n- Sanggup Bekerja di Bawah Tekanan', '- Management Gedung\r\n- Membangun Relasi dengan Tenant\r\n- Meningkatkan mutu pelayanan gedung\r\n- Meningkatkan Fasilitas Gedung', '2015-12-30');
+(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5,000,000', '7,000,000', 'TI, Web Developer', '3 Years', 'S1', '<p>- Expert in More Programming Language</p>\r\n<p>- Expert in IT Management</p>\r\n<p>- Expert in More Database System</p>', '<p>- Managing All About IT Developer and Infrastructure</p>', '2015-12-31'),
+(5, 'Kepala Koki', 'PT. Rumah Makan Indonesia', 'hr@rumahmakan.co.id', 'Jakarta', 'Negotiable', '', 'Juru Masak', '3 Years', 'Sarjana/s1', '<p>- jxfjjf</p>\r\n<p>- kdjfdjfk</p>\r\n<p>- dkfjkdfj</p>\r\n<p>- kdfkdjfk</p>\r\n<p>- kdfjkdjfkdj</p>', '<p>- dfkjdkfjdf</p>\r\n<p>- dfkdjkfdf</p>\r\n<p>- dkfjkdjfkdj</p>\r\n<p>- dkfkdjfkdjf</p>\r\n<p>- djfkdjkfjdk</p>', '2016-02-12');
 
 -- --------------------------------------------------------
 
@@ -415,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `sendcv` (
   KEY `receiver_name` (`receiver_name`),
   KEY `receiver_email` (`receiver_email`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
