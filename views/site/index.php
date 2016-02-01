@@ -17,35 +17,20 @@ $this->title = Yii::$app->params['siteName'];
 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img class="first-slide" src="<?= Yii::$app->homeUrl; ?>public/careers.jpg" alt="First slide">
+      <img class="first-slide" src="<?= Yii::$app->homeUrl; ?>public/billboard.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-          <h1></h1>
-
+          <div style="font-size:46px;"><b>Selamat Datang di Resumeditor.com</b></div>
+          <h2>Situs Lowongan Kerja dan CV Online</h2>
+          <?= Html::a('<span class="glyphicon glyphicon-search"></span> Cari Lowongan Kerja',['career/index'],['class'=>'btn btn-info btn-lg']) ?>
+          &nbsp;  &nbsp;
+          <?= Html::a('<span class="glyphicon glyphicon-pencil"></span> Buat CV Online',['cv'],['class'=>'btn btn-success btn-lg']) ?>
 
         </div>
       </div>
     </div>
-    <div class="item">
-      <img class="second-slide" src="<?= Yii::$app->homeUrl; ?>public/careers2.jpg" alt="Second slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1></h1>
 
 
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img class="third-slide" src="<?= Yii::$app->homeUrl; ?>public/careers3.jpg" alt="Third slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1></h1>
-
-
-        </div>
-      </div>
-    </div>
   </div>
 
 
