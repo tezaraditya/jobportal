@@ -45,7 +45,7 @@ use kartik\money\MaskMoney;
         'thousands' => ',',
         'allowNegative' => false,
     ]
-])->label('Maximal Salary'); ?></div>
+])->label('Maximum Salary'); ?></div>
 
 
 
