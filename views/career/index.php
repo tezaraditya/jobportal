@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 .' <span class="glyphicon glyphicon-map-marker"></span> '.$data->location
                 .' <span class="glyphicon glyphicon-option-vertical"></span> Experience : '.$data->experience
-                .' <span class="glyphicon glyphicon-option-vertical"></span> Salary : '.'Rp '.number_format($data->salary_min,"0",",","."). ' - ' .'Rp '.number_format($data->salary_max,"0",",",".")
+                .' <span class="glyphicon glyphicon-option-vertical"></span> Salary : '.'IDR '.$data->salary_min. ' - '.$data->salary_max
                 .'</div></div>',
 
                         ['career/detail','id'=>$data->id_career]);

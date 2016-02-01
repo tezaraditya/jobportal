@@ -112,7 +112,7 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
 <tr>
 <td class="col-md-6"><span class="glyphicon glyphicon-map-marker"></span> <?= Html::encode($model->location) ?> </td>
-<td class="col-md-6"><b>Rp</b> <?= number_format($model->salary_min,"0",",",".") ?> - <?= number_format($model->salary_max,"0",",",".") ?></td>
+<td class="col-md-6"><b>IDR</b> <?= $model->salary_min ?> - <?= $model->salary_max ?></td>
 </tr>
 <tr>
 <td class="col-md-6"><span class="glyphicon glyphicon-education"></span> <?= Html::encode($model->education) ?></td>
@@ -129,12 +129,12 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 
 <div class="panel panel-default">
 <div class="panel-heading"><h4>Requirements</h4></div>
-<div class="panel-body"><?= Html::encode($model->requirements) ?></div>
+<div class="panel-body"><?= Html::decode($model->requirements) ?></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><h4>Responsibilities</h4></div>
-<div class="panel-body"><?= Html::encode($model->responsibilities) ?></div>
+<div class="panel-body"><?= Html::decode($model->responsibilities) ?></div>
 </div>
 
 
