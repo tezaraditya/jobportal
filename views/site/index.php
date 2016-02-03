@@ -61,7 +61,7 @@ $this->title = Yii::$app->params['siteName'];
        foreach($JobFunction as $row) {
            echo "<div class='col-lg-3 style:height:0px;'>"
            .Html::a($row->function,['career/index','CareerSearch[function]'=>$row->function]).
-          " (".app\models\Career::find()->where(['function'=>$row->function])->count().
+          " (".\app\models\Career::find()->where(['function'=>$row->function])->count().
            ")</div>";
        }
 
