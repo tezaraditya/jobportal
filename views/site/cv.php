@@ -83,10 +83,10 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 
 <div class="col-md-3 thumbnail">
 <?php if(file_exists('public/document/photos/'.Yii::$app->user->identity->id.'.png')) { ?>
-<?= Html::a('<img src="'.Yii::$app->homeUrl.'/public/document/photos/'.Yii::$app->user->identity->id.'.png">',['#'],['data-toggle'=>'modal', 'data-target'=>'#myModal']) ?>
+<?= Html::a('<img src="'.Yii::$app->homeUrl.'public/document/photos/'.Yii::$app->user->identity->id.'.png">',['#'],['data-toggle'=>'modal', 'data-target'=>'#myModal']) ?>
 
 <?php } else { ?>
-<?= Html::a('<img src="'.Yii::$app->homeUrl.'/public/document/usernopic.png">',['#'],['data-toggle'=>'modal', 'data-target'=>'#myModal']) ?>
+<?= Html::a('<img src="'.Yii::$app->homeUrl.'public/document/usernopic.png">',['#'],['data-toggle'=>'modal', 'data-target'=>'#myModal']) ?>
 
 <?php } ?>
 
