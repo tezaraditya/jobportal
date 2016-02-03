@@ -57,7 +57,7 @@ $this->title = Yii::$app->params['siteName'];
 
       <?php
       //list Job Function in Index
-       $JobFunction = app\models\JobFunction::find()->orderBy('id_job_function')->all();
+       $JobFunction = \app\models\JobFunction::find()->orderBy('id_job_function')->all();
        foreach($JobFunction as $row) {
            echo "<div class='col-lg-3 style:height:0px;'>"
            .Html::a($row->function,['career/index','CareerSearch[function]'=>$row->function]).
