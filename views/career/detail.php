@@ -120,7 +120,7 @@ $checkSendCV = \app\models\Sendcv::find()->where(['id_composite'=>$model->id_car
 </tr>
 <tr>
 <td class="col-md-6"><span class="glyphicon glyphicon-send"></span> <?= Html::encode($model->experience) ?></td>
-<td class="col-md-6"><span class="glyphicon glyphicon-off"></span> <?= Html::encode(date('j F Y',strtotime($model->expired_date))) ?></td>
+<td class="col-md-6"><span class="glyphicon glyphicon-calendar"></span> <?= Html::encode(date('j F Y',strtotime($model->created_date))) ?></td>
 </tr>
 </tbody>
 </table>

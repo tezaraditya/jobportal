@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 02, 2016 at 03:44 AM
+-- Generation Time: Feb 04, 2016 at 11:55 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `accessToken` varchar(100) NOT NULL,
   PRIMARY KEY (`id_admin`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `admin`
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `career` (
   `education` varchar(100) NOT NULL,
   `requirements` text NOT NULL,
   `responsibilities` text NOT NULL,
-  `expired_date` date NOT NULL,
+  `created_date` date NOT NULL,
   PRIMARY KEY (`id_career`),
   KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`experience`,`education`),
   KEY `salary_max` (`salary_max`),
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `career` (
 -- Dumping data for table `career`
 --
 
-INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `experience`, `education`, `requirements`, `responsibilities`, `expired_date`) VALUES
+INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `experience`, `education`, `requirements`, `responsibilities`, `created_date`) VALUES
 (2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5,000,000', '7,000,000', 'TI, Web Developer', '3 Years', 'S1', '<p>- Expert in More Programming Language</p>\r\n<p>- Expert in IT Management</p>\r\n<p>- Expert in More Database System</p>', '<p>- Managing All About IT Developer and Infrastructure</p>', '2015-12-31'),
 (5, 'Kepala Koki', 'PT. Rumah Makan Indonesia', 'hr@rumahmakan.co.id', 'Jakarta', 'Negotiable', '', 'Juru Masak', '3 Years', 'Sarjana/s1', '<p>- jxfjjf</p>\r\n<p>- kdjfdjfk</p>\r\n<p>- dkfjkdfj</p>\r\n<p>- kdfkdjfk</p>\r\n<p>- kdfjkdjfkdj</p>', '<p>- dfkjdkfjdf</p>\r\n<p>- dfkdjkfdf</p>\r\n<p>- dkfjkdjfkdj</p>\r\n<p>- dkfkdjfkdjf</p>\r\n<p>- djfkdjkfjdk</p>', '2016-02-12');
 

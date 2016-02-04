@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return Html::a(
 
                 '<div class="row" >'
-                .'<div class="col-md-11"><span class="glyphicon glyphicon-calendar"></span> '.date('j F Y',strtotime($data->expired_date)).'<h1>'.$data->position.'</h1>'
+                .'<div class="col-md-11"><span class="glyphicon glyphicon-calendar"></span> '.date('j F Y',strtotime($data->created_date)).'<h1>'.$data->position.'</h1>'
                 .'<h4>'.$data->company.'</h4>'
 
                 .' <span class="glyphicon glyphicon-map-marker"></span> '.$data->location
