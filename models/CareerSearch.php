@@ -45,6 +45,7 @@ class CareerSearch extends Career
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort'=> ['defaultOrder' => ['created_date' => SORT_DESC]]
         ]);
 
         $this->load($params);
