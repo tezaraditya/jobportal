@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = Yii::$app->params['siteName'];
+$this->title = 'Situs Lowongan Kerja dan CV Online Terkini - '.Yii::$app->params['siteName'];
 
 ?>
 
