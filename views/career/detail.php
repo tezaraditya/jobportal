@@ -7,7 +7,7 @@ use yii\data\ActiveDataProvider;
 /* @var $this yii\web\View */
 /* @var $model app\models\Career */
 
-$this->title = $model->position.' at '.$model->company;
+$this->title = 'Lowongan '.$model->position.' at '.$model->company;
 
 $applySuccessMessage = '<button type="button" class="btn btn-default btn-lg" disabled="disabled"><span class="glyphicon glyphicon-ok"></span> Apply Success</button>';
 
