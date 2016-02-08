@@ -21,6 +21,7 @@ AppAsset::register($this);
 	<meta name="keyword" content="CV, Curriculum Vitae, Resume, Lamaran, Kerja, Work, Riwayat Hidup, Edit CV, CV Maker, CV Creator, CV Online, Pdf, job, karir, career, CV builder, Lowongan Kerja">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="shortcut icon" href="<?= Yii::$app->homeUrl ?>favicon.ico">
     <?php $this->head() ?>
 
 </head>
