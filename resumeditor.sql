@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 04, 2016 at 11:55 PM
+-- Generation Time: Feb 12, 2016 at 01:31 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `career` (
   `education` varchar(100) NOT NULL,
   `requirements` text NOT NULL,
   `responsibilities` text NOT NULL,
-  `created_date` date NOT NULL,
+  `created_date` datetime NOT NULL,
   PRIMARY KEY (`id_career`),
   KEY `position` (`position`,`company`,`location`,`salary_min`,`function`,`experience`,`education`),
   KEY `salary_max` (`salary_max`),
@@ -70,15 +70,7 @@ CREATE TABLE IF NOT EXISTS `career` (
   KEY `function` (`function`),
   KEY `location` (`location`),
   KEY `company` (`company`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `career`
---
-
-INSERT INTO `career` (`id_career`, `position`, `company`, `email`, `location`, `salary_min`, `salary_max`, `function`, `experience`, `education`, `requirements`, `responsibilities`, `created_date`) VALUES
-(2, 'IT Manager', 'PT. Jalanbuntu Media', 'tezaraditya@gmail.com', 'Jakarta', '5,000,000', '7,000,000', 'TI, Web Developer', '3 Years', 'S1', '<p>- Expert in More Programming Language</p>\r\n<p>- Expert in IT Management</p>\r\n<p>- Expert in More Database System</p>', '<p>- Managing All About IT Developer and Infrastructure</p>', '2015-12-31'),
-(5, 'Kepala Koki', 'PT. Rumah Makan Indonesia', 'hr@rumahmakan.co.id', 'Jakarta', 'Negotiable', '', 'Juru Masak', '3 Years', 'Sarjana/s1', '<p>- jxfjjf</p>\r\n<p>- kdjfdjfk</p>\r\n<p>- dkfjkdfj</p>\r\n<p>- kdfkdjfk</p>\r\n<p>- kdfjkdjfkdj</p>', '<p>- dfkjdkfjdf</p>\r\n<p>- dfkdjkfdf</p>\r\n<p>- dkfjkdjfkdj</p>\r\n<p>- dkfkdjfkdjf</p>\r\n<p>- djfkdjkfjdk</p>', '2016-02-12');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -105,6 +97,39 @@ INSERT INTO `certification` (`id_certification`, `id_user`, `certification`, `in
 (2, 1, 'Open BTS', 'Kermit Camp', '2011-08-28'),
 (3, 1, 'IT Week', 'Himakom UNPAK', '2012-04-07'),
 (4, 1, 'Tren Internet Seminar', 'STMIK JAYABAYA & Three Provider', '2012-07-17');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `id_company` int(11) NOT NULL AUTO_INCREMENT,
+  `company` varchar(100) NOT NULL,
+  `about` text NOT NULL,
+  `address` varchar(500) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `province` varchar(100) NOT NULL,
+  `postal_code` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `password` varchar(300) NOT NULL,
+  `authKey` varchar(300) NOT NULL,
+  `accessToken` varchar(300) NOT NULL,
+  `join_date` datetime NOT NULL,
+  PRIMARY KEY (`id_company`),
+  UNIQUE KEY `company` (`company`,`email`),
+  KEY `province` (`province`),
+  KEY `province_2` (`province`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`id_company`, `company`, `about`, `address`, `city`, `province`, `postal_code`, `email`, `phone`, `password`, `authKey`, `accessToken`, `join_date`) VALUES
+(1, 'Jalanbuntu Media', 'Jalanbuntu Media is a Digital Company Startup, we established in Middle 2015', 'Jl. Kebon Bawang XV C No. 6, Tanjung Priok', 'Jakarta Utara', 'Jakarta', '14320', 'jalanbuntumedia@gmail.com', '081314421461', '6f6f33346f32', '50769ede613cb93b8300c832af691d80514c4f39', '', '2016-02-11 18:17:32');
 
 -- --------------------------------------------------------
 
@@ -496,13 +521,20 @@ INSERT INTO `working` (`id_working`, `id_user`, `company`, `type`, `position`, `
 --
 ALTER TABLE `career`
   ADD CONSTRAINT `career_ibfk_1` FOREIGN KEY (`function`) REFERENCES `job_function` (`function`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `career_ibfk_2` FOREIGN KEY (`location`) REFERENCES `location` (`location`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `career_ibfk_2` FOREIGN KEY (`location`) REFERENCES `location` (`location`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `career_ibfk_3` FOREIGN KEY (`company`) REFERENCES `company` (`company`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `certification`
 --
 ALTER TABLE `certification`
   ADD CONSTRAINT `certification_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `company`
+--
+ALTER TABLE `company`
+  ADD CONSTRAINT `company_ibfk_1` FOREIGN KEY (`province`) REFERENCES `location` (`location`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `education`
