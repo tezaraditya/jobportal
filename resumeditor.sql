@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 12, 2016 at 01:31 AM
+-- Generation Time: Feb 12, 2016 at 02:26 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `career` (
   KEY `function` (`function`),
   KEY `location` (`location`),
   KEY `company` (`company`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
