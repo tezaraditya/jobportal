@@ -59,17 +59,26 @@ AppAsset::register($this);
                 ['label' => 'Job Vacancy','url'=>['/career/index']],
                 ['label' => 'CV Editor','url'=>['/site/cv']],
 
-
-
           ],
 
 
       ]);
 
+      if(Yii::$app->user->isGuest) {
+      echo nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-left'],
+            'items' => [
+                  Html::a('<span class="glyphicon glyphicon-plus"></span> Pasang Lowongan Kerja',Yii::$app->params['employersUrl'],['class'=>'btn btn-warning','style'=>'margin-top:8px;']),
+            ],
+        ]);
+}
+
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
            ['label' => 'Sign Up', 'url' => ['/users/signup'],'visible'=>Yii::$app->user->isGuest],
+
 
            Yii::$app->user->isGuest ?
                   ['label' => 'Login', 'url' => ['/site/login']] :
