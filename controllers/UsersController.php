@@ -33,11 +33,11 @@ class UsersController extends Controller
 
 			'access' => [
 					'class' => AccessControl::className(),
-					'only' => ['index','upload'],
+					'only' => ['index','upload','changepassword'],
 					'rules' => [
 							[
 								'allow' => true,
-								'actions' => ['index','upload'],
+								'actions' => ['index','upload','changepassword'],
 								'roles' => ['@'],
 
 							],
