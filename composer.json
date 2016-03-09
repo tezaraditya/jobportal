@@ -21,11 +21,11 @@
         "yiisoft/yii2-jui": "^2.0",
         "perminder-klair/yii2-dropzone": "dev-master",
         "kartik-v/yii2-editable": "@dev",
-        "yiisoft/yii2-imagine": "^2.0",
+        "yiisoft/yii2-imagine": "*",
         "mpdf/mpdf": "dev-master",
         "kartik-v/yii2-money": "*",
         "himiklab/yii2-recaptcha-widget": "*"
-        
+
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

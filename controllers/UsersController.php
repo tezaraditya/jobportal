@@ -139,8 +139,8 @@ class UsersController extends Controller
               //Now save file data to database
 
               //Create Thumbnail Image and Resize
-			 Image::thumbnail($uploadPath.'/'.Yii::$app->user->identity->id.'.png',160,175)
-				->save(Yii::getAlias($uploadPath.'/'.Yii::$app->user->identity->id.'.png'));
+			 //Image::thumbnail($uploadPath.'/'.Yii::$app->user->identity->id.'.png',160,175)
+				//->save(Yii::getAlias($uploadPath.'/'.Yii::$app->user->identity->id.'.png'));
 
 
 
