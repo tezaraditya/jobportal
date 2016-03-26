@@ -3,6 +3,6 @@
 return [
     'adminEmail' => 'admin@example.com',
 	  'siteName' => 'Resumeditor.com',
-    'employersUrl'=>'http://resumeditor.com/company',
+    'employersUrl'=>'http://company.resumeditor.com/', 
 
 ];
