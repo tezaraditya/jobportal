@@ -3,8 +3,17 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
-$this->title = 'Situs Lowongan Kerja dan CV Online Terkini - '.Yii::$app->params['siteName'];
+use yii\helpers\ArrayHelper;
+use kartik\money\MaskMoney;
+
+$model = new app\models\CareerSearch;
+
+$month_ID = array("","Januari","Februari","Maret", "April", "Mei", "Juni","Juli","Agustus","September","Oktober", "November","Desember");
+
+
+$this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_ID[date('n')].''.date(' Y');
 
 ?>
 
@@ -17,16 +26,43 @@ $this->title = 'Situs Lowongan Kerja dan CV Online Terkini - '.Yii::$app->params
 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img class="first-slide" src="<?= Yii::$app->homeUrl; ?>public/billboard.jpg" alt="First slide">
+      <img class="first-slide billboard" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-          <div style="font-size:46px;"><b>Selamat Datang di Resumeditor.com</b></div>
-          <h2>Situs Lowongan Kerja dan CV Online</h2>
-          <?= Html::a('<span class="glyphicon glyphicon-search"></span> Cari Lowongan Kerja',['career/index'],['class'=>'btn btn-info btn-lg']) ?>
-          &nbsp;  &nbsp;
-          <?= Html::a('<span class="glyphicon glyphicon-pencil"></span> Buat CV Online',['cv'],['class'=>'btn btn-success btn-lg']) ?>
+
+          <div class="career-search col-md-12 well">
+
+              <p style='font-size:200%; color:#123456; font-family:impact;' >Cari Lowongan Kerja Disini !</p>
+              <?php $form = ActiveForm::begin([
+                  'action' => ['/career/index'],
+                  'method' => 'get',
+              ]); ?>
+
+
+              <div class="col-md-7"><?= $form->field($model, 'position')->textInput(['placeholder'=>'Search Position ...','class'=>'form-control input-lg'])->label(false) ?></div>
+
+              <div class="col-md-5">  <?= $form->field($model, 'function')->dropDownList(ArrayHelper::map(\app\models\JobFunction::find()->asArray()->all(), 'function', 'function'), ['prompt' => '-- All Job Function --','class'=>'form-control input-lg'])->label(false) ?></div>
+            <div class="col-md-5"> <?= $form->field($model, 'location')->dropDownList(ArrayHelper::map(\app\models\Location::find()->asArray()->all(), 'location', 'location'), ['prompt' => '-- All Location --','class'=>'form-control input-lg'])->label(false) ?> </div>
+
+
+
+
+              <div class="col-md-2">
+                  <?= Html::submitButton(Yii::t('app', '<span class="glyphicon glyphicon-search"></span> Search'), ['class' => 'btn btn-primary btn-lg']) ?>
+
+              </div>
+
+              <?php ActiveForm::end(); ?>
+
+          </div>
+
+
+
+
+
 
         </div>
+
       </div>
     </div>
 

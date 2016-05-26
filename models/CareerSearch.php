@@ -15,11 +15,13 @@ class CareerSearch extends Career
     /**
      * @inheritdoc
      */
+     
+
     public function rules()
     {
         return [
             [['id_career'], 'integer'],
-            [['position', 'company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'experience', 'education', 'requirements', 'responsibilities','created_date'], 'safe'],
+            [['position','company', 'email', 'location', 'salary_min', 'salary_max', 'function', 'experience', 'education', 'requirements', 'responsibilities','created_date'], 'safe'],
         ];
     }
 
@@ -56,11 +58,12 @@ class CareerSearch extends Career
             return $dataProvider;
         }
 
-        $query->andFilterWhere([
-            'id_career' => $this->id_career,
-        ]);
+        //$query->andFilterWhere([
+          //  'id_career' => $this->id_career,
+        //]);
 
-        $query->andFilterWhere(['like', 'position', $this->position])
+
+          $query->andFilterWhere(['like', 'position', $this->position])
             ->andFilterWhere(['like', 'company', $this->company])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'location', $this->location])
@@ -72,6 +75,9 @@ class CareerSearch extends Career
             ->andFilterWhere(['like', 'requirements', $this->requirements])
             ->andFilterWhere(['like', 'responsibilities', $this->responsibilities])
             ->andFilterWhere(['like','created_date', $this->created_date]);
+
+
+
 
         return $dataProvider;
     }
