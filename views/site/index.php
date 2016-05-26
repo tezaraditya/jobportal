@@ -30,21 +30,19 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
       <div class="container">
         <div class="carousel-caption">
 
-          <div class="career-search col-md-12 well">
+          <div class="career-search col-md-12">
 
-              <p style='font-size:200%; color:#123456; font-family:impact;' >Cari Lowongan Kerja Disini !</p>
+              <p class='col-md-10' style='font-size:200%; color:#ffffff; font-family:impact;' >Cari Lowongan Kerja Disini !</p>
+			  
               <?php $form = ActiveForm::begin([
                   'action' => ['/career/index'],
                   'method' => 'get',
               ]); ?>
 
 
-              <div class="col-md-7"><?= $form->field($model, 'position')->textInput(['placeholder'=>'Search Position ...','class'=>'form-control input-lg'])->label(false) ?></div>
+              <div class="col-md-10"><?= $form->field($model, 'position')->textInput(['placeholder'=>'Search Position ...','class'=>'form-control input-lg'])->label(false) ?></div>
 
-              <div class="col-md-5">  <?= $form->field($model, 'function')->dropDownList(ArrayHelper::map(\app\models\JobFunction::find()->asArray()->all(), 'function', 'function'), ['prompt' => '-- All Job Function --','class'=>'form-control input-lg'])->label(false) ?></div>
-            <div class="col-md-5"> <?= $form->field($model, 'location')->dropDownList(ArrayHelper::map(\app\models\Location::find()->asArray()->all(), 'location', 'location'), ['prompt' => '-- All Location --','class'=>'form-control input-lg'])->label(false) ?> </div>
-
-
+             
 
 
               <div class="col-md-2">
