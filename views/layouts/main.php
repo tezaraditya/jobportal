@@ -57,7 +57,7 @@ AppAsset::register($this);
             ['label' => ''],
             ['label' => ''],
                 ['label' => 'Job Vacancy','url'=>['/career/index']],
-                ['label' => 'CV Editor','url'=>['/site/cv']],
+                ['label' => 'CV Editor','url'=>['/site/cv'],'visible'=>!Yii::$app->user->isGuest],
 
           ],
 

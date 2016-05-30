@@ -29,10 +29,13 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
       <img class="first-slide billboard" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-
+		
+		
+		  
+		
           <div class="career-search col-md-12">
 
-              <p class='col-md-10' style='font-size:200%; color:#ffffff; font-family:impact;' >Cari Lowongan Kerja Disini !</p>
+             
 			  
               <?php $form = ActiveForm::begin([
                   'action' => ['/career/index'],
@@ -40,22 +43,41 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
               ]); ?>
 
 
-              <div class="col-md-10"><?= $form->field($model, 'position')->textInput(['placeholder'=>'Search Position ...','class'=>'form-control input-lg'])->label(false) ?></div>
+              <div class="col-md-10">
+			  
+			   <div class="input-group">
+    <?= $form->field($model, 'position')->textInput(['class'=>'form-control input-lg','placeholder'=>'Cari Lowongan Kerja Disini...'])->label(false) ?>
+	<span class="input-group-btn">
+	<div class="help-block"></div>
+    <?= Html::button('<span class="glyphicon glyphicon-search"></span>', ['class' => 'btn btn-default btn-lg','type'=>'submit']) ?>
+    </span>
+	
+	
+</div>
+			  
+	</div>
 
              
 
+			 
+			 
 
-              <div class="col-md-2">
-                  <?= Html::submitButton(Yii::t('app', '<span class="glyphicon glyphicon-search"></span> Search'), ['class' => 'btn btn-primary btn-lg']) ?>
-
-              </div>
+           			  
+			   <div class="col-md-2">
+			   <div class="help-block"></div>
+		  <?= Html::a('<button type="button" class="btn btn-primary btn-lg"><b><span class="glyphicon glyphicon-cloud-upload"></span> Buat Curriculum Vitae</b></button>',['/site/cv']) ?>
+		
+		  </div>
+			  
 
               <?php ActiveForm::end(); ?>
 
           </div>
+		  
+		 
 
 
-
+ 
 
 
 
@@ -127,3 +149,9 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
 </div>
 </div>
 </div>
+
+
+
+
+
+
