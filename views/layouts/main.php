@@ -17,7 +17,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Situs Lowongan Kerja dan CV Online">
+	<meta name="description" content="Situs Informasi Lowongan Kerja Terbaru Indonesia dan CV Maker Online">
 	<meta name="keyword" content="CV, Curriculum Vitae, Resume, Lamaran, Kerja, Work, Riwayat Hidup, Edit CV, CV Maker, CV Creator, CV Online, Pdf, job, karir, career, CV builder, Lowongan Kerja">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
