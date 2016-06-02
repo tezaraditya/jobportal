@@ -161,7 +161,34 @@ public function actionSavecv() {
     {
 
         $this->layout='front';
-        return $this->render('index');
+		
+		$LatestJobs = new ActiveDataProvider([
+            'query' => \app\models\Career::find()->orderBy(['created_date'=>SORT_DESC]),
+				'pagination'=>[
+						'pageSize' => 10,
+				],
+        ]);
+		
+		$JobFunction = new ActiveDataProvider([
+				'query' => \app\models\JobFunction::find()->orderBy('id_job_function'),
+				'pagination' => [
+						'pageSize'=>10,
+				],
+		]);
+		
+		$Location = new ActiveDataProvider([
+				'query' => \app\models\Location::find()->orderBy('id_location'),
+				'pagination' => [
+						'pageSize'=>10,
+				],
+		]);
+		
+        return $this->render('index',[
+			'LatestJobs'=>$LatestJobs,
+			'JobFunction'=>$JobFunction,
+			'Location'=>$Location,
+		
+		]);
     }
 
     //About Page

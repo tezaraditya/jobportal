@@ -20,6 +20,9 @@ class AppAsset extends AssetBundle
     public $css = [
         'public/css/site.css',
         'public/css/carousel.css',
+        'public/css/bootstrap-social.css',
+        'public/css/font-awesome.css',
+   
         
     ];
     public $js = [
