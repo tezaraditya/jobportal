@@ -50,7 +50,7 @@ class WorkingController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Working::find(),
+            'query' => Working::find()->where(['id_user'=>Yii::$app->user->identity->id]),
         ]);
 
 
