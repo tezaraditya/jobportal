@@ -73,7 +73,7 @@ return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.p
 
       </div>
       <div class="modal-footer">
-	  <?= Html::a('Save Photos',['/'],['class'=>'btn btn-lg btn-success btn-block']) ?>
+	  <?= Html::a('Save Photos',['/site/cv'],['class'=>'btn btn-lg btn-success btn-block']) ?>
       </div>
     </div>
   </div>
