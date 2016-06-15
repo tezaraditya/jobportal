@@ -132,6 +132,17 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
 </div>
 <div class="col-md-3">
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- re_leftbar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8257245904243916"
+     data-ad-slot="2664840389"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <h2 style="font-family:impact; color:#123456; text-align:center;">Follow Us</h2><hr/>
 <div align="center" class="well">
 <?= Html::a('<i class="fa fa-facebook"></i>','https://www.facebook.com/resumeditorcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-facebook']); ?>
