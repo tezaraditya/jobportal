@@ -55,13 +55,13 @@ $config = [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@app/mail',
             'useFileTransport' => false,
-            
+
 
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => 'resumeditorcom@gmail.com',
-                'password' => 'razetseller',
+                'password' => '',
                 'port' => '587',
                 'encryption' => 'tls',
                        ],
