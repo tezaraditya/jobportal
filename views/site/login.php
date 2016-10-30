@@ -7,6 +7,8 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
+
+
 $this->title = 'Log In';
 
 ?>
@@ -42,11 +44,17 @@ $this->title = 'Log In';
 
         <div class="col-md-12"><?= Html::a('Forgot Password ?',['users/forgotpassword']) ?></div>
 
-        <div class="col-md-12">Or</div>
+        <div class="col-md-12"></div>
         <div class="col-md-12">
-          <?= yii\authclient\widgets\AuthChoice::widget([
-              'baseAuthUrl'=>['site/auth']
-          ]) ?>
+
+
+          <?php use \yii\authclient\widgets\AuthChoice; ?>
+          <?php $authAuthChoice = AuthChoice::begin(['baseAuthUrl'=>['site/auth'], 'autoRender'=>false]); ?>
+          <?php foreach ($authAuthChoice->getClients() as $client): ?>
+            <?= Html::a('<i class="fa fa-facebook"></i>Login with Facebook',['site/auth','authclient'=>$client->name],['class'=>'btn btn-block btn-social btn-lg btn-facebook']) ?>
+
+        <?php endforeach; ?>
+            <?php AuthChoice::end(); ?>
         </div>
 
     <?php ActiveForm::end(); ?>
