@@ -20,6 +20,7 @@ class SiteController extends Controller
 {
 
   //public $layout = '';
+  public $successUrl='Success';
 
     public function behaviors()
     {
@@ -54,7 +55,29 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            'auth' => [
+              'class' => 'yii\authclient\AuthAction',
+              'successCallback' => [$this, 'successCallback'],
+            ],
         ];
+    }
+
+    //Success Callback AuthAction Facebook login
+    public function successCallback($client) {
+      $attributes = $client->getUserAttributes();
+      //user login or Signup Here
+      //die(print_r($attributes)) <- Debug
+
+      $user=\common\modules\auth\models\User::find()->where(['email'=>$attributes['email']])->one();
+      if(!empty($user)) {
+        Yii::$app->user->login($user);
+      } else {
+        //Save Session attribute user from Facebook
+        $session=Yii::$app->session;
+        $session['attributes']=$attributes;
+        //Redirect to Signup, Global Var "successUrl"
+        $this->successUrl=\yii\helpers\Url::to(['signup']);
+      }
     }
 
     //Curriculum Vitae Module
@@ -161,33 +184,33 @@ public function actionSavecv() {
     {
 
         $this->layout='front';
-		
+
 		$LatestJobs = new ActiveDataProvider([
             'query' => \app\models\Career::find()->orderBy(['created_date'=>SORT_DESC]),
 				'pagination'=>[
 						'pageSize' => 10,
 				],
         ]);
-		
+
 		$JobFunction = new ActiveDataProvider([
 				'query' => \app\models\JobFunction::find()->orderBy('id_job_function'),
 				'pagination' => [
 						'pageSize'=>10,
 				],
 		]);
-		
+
 		$Location = new ActiveDataProvider([
 				'query' => \app\models\Location::find()->orderBy('id_location'),
 				'pagination' => [
 						'pageSize'=>10,
 				],
 		]);
-		
+
         return $this->render('index',[
 			'LatestJobs'=>$LatestJobs,
 			'JobFunction'=>$JobFunction,
 			'Location'=>$Location,
-		
+
 		]);
     }
 
@@ -226,6 +249,6 @@ public function actionSavecv() {
 
     }
 
-    
+
 
 }

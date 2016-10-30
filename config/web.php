@@ -47,6 +47,17 @@ $config = [
 
 		],
 
+    'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'facebook' => [
+                    'class' => 'yii\authclient\clients\Facebook',
+                    'clientId' => '1792741884330031',
+                    'clientSecret' => '7986f075d64d9365d2e7232e36dd7d7d',
+                ],
+            ],
+       ],
+
 
         'errorHandler' => [
             'errorAction' => 'site/error',

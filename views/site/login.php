@@ -42,6 +42,13 @@ $this->title = 'Log In';
 
         <div class="col-md-12"><?= Html::a('Forgot Password ?',['users/forgotpassword']) ?></div>
 
+        <div class="col-md-12">Or</div>
+        <div class="col-md-12">
+          <?= yii\authclient\widgets\AuthChoice::widget([
+              'baseAuthUrl'=>['site/auth']
+          ]) ?>
+        </div>
+
     <?php ActiveForm::end(); ?>
 
 

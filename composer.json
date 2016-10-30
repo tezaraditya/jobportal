@@ -24,7 +24,8 @@
         "yiisoft/yii2-imagine": "*",
         "mpdf/mpdf": "dev-master",
         "kartik-v/yii2-money": "*",
-        "himiklab/yii2-recaptcha-widget": "*"
+        "himiklab/yii2-recaptcha-widget": "*",
+        "yiisoft/yii2-authclient": "^2.1"
 
     },
     "require-dev": {
