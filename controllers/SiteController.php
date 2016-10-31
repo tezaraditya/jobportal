@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use yii\data\ActiveDataProvider;
 use app\models\Feedback;
 use app\models\Users;
+use app\models\User;
 
 use mPDF;
 
@@ -68,7 +69,7 @@ class SiteController extends Controller
       //user login or Signup Here
       //die(print_r($attributes)) <- Debug
 
-      $user=\common\modules\auth\models\User::find()->where(['email'=>$attributes['email']])->one();
+      $user= Users::find()->where(['email'=>$attributes['email']])->one();
       if(!empty($user)) {
         Yii::$app->user->login($user);
       } else {

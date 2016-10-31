@@ -44,17 +44,17 @@ $this->title = 'Log In';
 
         <div class="col-md-12"><?= Html::a('Forgot Password ?',['users/forgotpassword']) ?></div>
 
-        <div class="col-md-12"></div>
+    
         <div class="col-md-12">
 
 
-          <?php use \yii\authclient\widgets\AuthChoice; ?>
-          <?php $authAuthChoice = AuthChoice::begin(['baseAuthUrl'=>['site/auth'], 'autoRender'=>false]); ?>
-          <?php foreach ($authAuthChoice->getClients() as $client): ?>
-            <?= Html::a('<i class="fa fa-facebook"></i>Login with Facebook',['site/auth','authclient'=>$client->name],['class'=>'btn btn-block btn-social btn-lg btn-facebook']) ?>
+          <?php //  use \yii\authclient\widgets\AuthChoice; ?>
+          <?php  //$authAuthChoice = AuthChoice::begin(['baseAuthUrl'=>['site/auth'], 'autoRender'=>false]); ?>
+          <?php //foreach ($authAuthChoice->getClients() as $client): ?>
+            <?php //Html::a('<i class="fa fa-facebook"></i>Login with Facebook',['site/auth','authclient'=>$client->name],['class'=>'btn btn-block btn-social btn-lg btn-facebook']) ?>
 
-        <?php endforeach; ?>
-            <?php AuthChoice::end(); ?>
+        <?php //endforeach; ?>
+            <?php //AuthChoice::end(); ?>
         </div>
 
     <?php ActiveForm::end(); ?>
