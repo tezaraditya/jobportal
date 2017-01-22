@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-	  'siteName' => 'Resumeditor.com',
-    'employersUrl'=>'http://company.resumeditor.com/',
+    'adminEmail' => 'admin@gudangjob.com',
+	  'siteName' => 'gudangjob.com',
+    'employersUrl'=>'http://company.gudangjob.com/',
 
 
 ];

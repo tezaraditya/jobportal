@@ -8,6 +8,7 @@ use app\models\CareerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use  yii\behaviors\SluggableBehavior;
 
 /**
  * CareerController implements the CRUD actions for Career model.
@@ -26,6 +27,12 @@ class CareerController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+
+            [
+              'class' => SluggableBehavior::className(),
+            'attribute' => 'position',
+            'slugAttribute' => 'slug',
+          ],
         ];
     }
 
@@ -56,7 +63,7 @@ class CareerController extends Controller
        if($sendcvModel->load(Yii::$app->request->post())) {
 
          Yii::$app->mailer->compose(['html' => '@app/mail/layouts/cv',])
-           ->setFrom(['resumeditorcom@gmail.com'=>'Resumeditor.com'])
+           ->setFrom(['gudangjobcom@gmail.com'=>'Gudangjob.com'])
            ->setTo($sendcvModel->receiver_email)
            ->setReplyTo(Yii::$app->user->identity->email)
            ->setCC(Yii::$app->user->identity->email)
@@ -81,6 +88,18 @@ class CareerController extends Controller
 
     }
 
+
+    //Sluggable function
+    public function actionSlug($slug) {
+      $model = Career::find()->where(['position'=>$slug])->one();
+      if (!is_null($model)) {
+        return $this->render('detail',[
+            'model'=>$model,
+        ]);
+      } else {
+        return $this->render('404',['exception'=>Yii::$app->errorHandler->exception]);
+      }
+    }
 
 
 

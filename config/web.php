@@ -27,6 +27,7 @@ $config = [
 
                           'career/<id:\d+>' => 'career/detail',
                            '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                           'career/<id:\d+>-<slug>' => 'career/slug',
 
 		  'personal' =>'users',
           'login' => 'site/login',
@@ -71,7 +72,7 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
-                'username' => 'resumeditorcom@gmail.com',
+                'username' => 'gudangjobcom@gmail.com',
                 'password' => '',
                 'port' => '587',
                 'encryption' => 'tls',

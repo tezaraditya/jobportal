@@ -10,7 +10,7 @@ $this->title = 'About Us';
   <div class="panel-body">
   <h4>
   <p align="justify">
-  <strong>Resumeditor.com</strong> yang berdiri pada 9 November 2015 adalah Situs CV Maker dan juga Situs Informasi Lowongan Kerja yang selalu update setiap harinya.
+  <strong><?= Yii::$app->params['siteName'] ?></strong> yang berdiri pada 9 November 2015 adalah Situs CV Maker dan juga Situs Informasi Lowongan Kerja yang selalu update setiap harinya.
 </p>
 </h4>
 </div>

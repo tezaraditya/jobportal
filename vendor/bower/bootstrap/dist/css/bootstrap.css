@@ -4326,7 +4326,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
-  background: url('../../../public/resumeditor.png');
+  background: url('../../../public/logo.png');
 }
 .navbar-brand:hover,
 .navbar-brand:focus {

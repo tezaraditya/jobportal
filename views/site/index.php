@@ -29,14 +29,14 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
       <img class="first-slide billboard" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
-		
-		
-		  
-		
+
+
+
+
           <div class="career-search col-md-12">
 
-             
-			  
+
+
               <?php $form = ActiveForm::begin([
                   'action' => ['/career/index'],
                   'method' => 'get',
@@ -44,40 +44,40 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
 
 
               <div class="col-md-10">
-			  
+
 			   <div class="input-group">
     <?= $form->field($model, 'position')->textInput(['class'=>'form-control input-lg','placeholder'=>'Cari Lowongan Kerja Disini...'])->label(false) ?>
 	<span class="input-group-btn">
 	<div class="help-block"></div>
     <?= Html::button('<span class="glyphicon glyphicon-search"></span>', ['class' => 'btn btn-default btn-lg','type'=>'submit']) ?>
     </span>
-	
-	
+
+
 </div>
-			  
+
 	</div>
 
-             
 
-			 
-			 
 
-           			  
+
+
+
+
 			   <div class="col-md-2">
 			   <div class="help-block"></div>
 		  <?= Html::a('<button type="button" class="btn btn-primary btn-lg"><b><span class="glyphicon glyphicon-cloud-upload"></span> Buat Curriculum Vitae</b></button>',['/site/cv']) ?>
-		
+
 		  </div>
-			  
+
 
               <?php ActiveForm::end(); ?>
 
           </div>
-		  
-		 
 
 
- 
+
+
+
 
 
 
@@ -96,11 +96,11 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
 <div class="container">
 <div class="col-md-8">
   <h2 style="font-family:impact; color:#123456;">Latest Jobs</h2><hr/>
-  
-						
-						
-						
-						
+
+
+
+
+
 					    <?= GridView::widget([
     'dataProvider' => $LatestJobs,
     'showHeader' => false,
@@ -122,25 +122,25 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
                 .' <span class="glyphicon glyphicon-option-vertical"></span> Salary : '.'IDR '.$data->salary_min. ' - '.$data->salary_max
                 .'</div></div>',
 
-                        ['career/detail','id'=>$data->id_career]);
+                        ['career/'.$data->id_career.'-'.$data->position]);
             },
         ),
     ],
-]); ?>	
-					
-  
+]); ?>
+
+
 </div>
 <div class="col-md-3">
 
 <h2 style="font-family:impact; color:#123456; text-align:center;">Follow Us</h2><hr/>
 <div align="center" class="well">
-<?= Html::a('<i class="fa fa-facebook"></i>','https://www.facebook.com/resumeditorcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-facebook']); ?>
+<?= Html::a('<i class="fa fa-facebook"></i>','https://www.facebook.com/gudangjobcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-facebook']); ?>
 &nbsp;
-<?= Html::a('<i class="fa fa-twitter"></i>','https://www.twitter.com/resumeditorcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-twitter']); ?>
+<?= Html::a('<i class="fa fa-twitter"></i>','https://www.twitter.com/gudangjobcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-twitter']); ?>
 &nbsp;
-<?= Html::a('<i class="fa fa-youtube"></i>','https://www.youtube.com/channel/UC3P-gNSb795ZXSzCJaRMvGQ',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-google']); ?>
+<?= Html::a('<i class="fa fa-youtube"></i>','https://www.youtube.com/channel/UCbexi8Yb-avrJXw1Pxi9gfg',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-google']); ?>
 &nbsp;
-<?= Html::a('<i class="fa fa-instagram"></i>','https://www.instagram.com/resumeditorcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-instagram']); ?>
+<?= Html::a('<i class="fa fa-instagram"></i>','https://www.instagram.com/gudangjobcom',['target'=>'_blank','class'=>'btn btn-social-icon btn-lg btn-instagram']); ?>
 
 </div>
 
@@ -168,7 +168,7 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
             },
         ),
     ],
-]); ?>	
+]); ?>
 
 </div>
 
@@ -195,7 +195,7 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
             },
         ),
     ],
-]); ?>	
+]); ?>
 
 </div>
 
@@ -204,9 +204,3 @@ $this->title = Yii::$app->params['siteName'].' - Situs Lowongan Kerja '.$month_I
 </div>
 
 </div>
-
-
-
-
-
-

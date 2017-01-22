@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 .' <span class="glyphicon glyphicon-option-vertical"></span> Salary : '.'IDR '.$data->salary_min. ' - '.$data->salary_max
                 .'</div></div>',
 
-                        ['career/detail','id'=>$data->id_career]);
+                        ['career/'.$data->id_career.'-'.$data->position]);
             },
 
         ),
