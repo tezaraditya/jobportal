@@ -90,11 +90,31 @@ class CareerController extends Controller
 
 
     //Sluggable function
-    public function actionSlug($slug) {
+    public function actionSlug($id,$slug) {
+       $sendcvModel = new \app\models\Sendcv();
       $model = Career::find()->where(['position'=>$slug])->one();
       if (!is_null($model)) {
+
+        if($sendcvModel->load(Yii::$app->request->post())) {
+
+          Yii::$app->mailer->compose(['html' => '@app/mail/layouts/cv',])
+            ->setFrom(['gudangjobcom@gmail.com'=>'Gudangjob.com'])
+            ->setTo($sendcvModel->receiver_email)
+            ->setReplyTo(Yii::$app->user->identity->email)
+            ->setCC(Yii::$app->user->identity->email)
+            ->setSubject($sendcvModel->subject)
+            //->setHtmlBody($sendcvModel->content)
+            ->send();
+
+             $sendcvModel->save();
+             Yii::$app->session->setFlash('sendCv_success');
+             return $this->refresh();
+
+        }
+
         return $this->render('detail',[
-            'model'=>$model,
+            'model'=>$this->findModel($id),
+             'sendcvModel' => $sendcvModel,
         ]);
       } else {
         return $this->render('404',['exception'=>Yii::$app->errorHandler->exception]);
