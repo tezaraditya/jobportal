@@ -194,7 +194,7 @@ class UsersController extends Controller
         <h4>Your Email : ". $queryRetrieve->email ."</h4>
         <h4>Your Password : ". pack("H*",($queryRetrieve->password)) ."</h4>
 
-        <p><b><i><h3>Note : Please Login Again and change your Password after login.</h3></b></i></p>
+        <p><b><i><h3>Note : Please Login Again and change your Password after login</h3></b></i></p>
         <hr/>
         <p>Thank You for using <b>Gudangjob.com</b></p>
 
