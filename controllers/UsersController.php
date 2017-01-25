@@ -183,7 +183,7 @@ class UsersController extends Controller
       if($queryRetrieve == TRUE){
 
       Yii::$app->mailer->compose()
-        ->setFrom('resumeditorcom@gmail.com')
+        ->setFrom('gudangjobcom@gmail.com')
         ->setTo($model->email)
         ->setSubject('Forgot Password')
         ->setHtmlBody(
@@ -196,7 +196,7 @@ class UsersController extends Controller
 
         <p><b><i><h3>Note : Please Login Again and change your Password after login.</h3></b></i></p>
         <hr/>
-        <p>Thank You for using <b>Resumeditor.com</b></p>
+        <p>Thank You for using <b>Gudangjob.com</b></p>
 
         <p>Have a Nice Day :)</p>
         "
@@ -211,7 +211,7 @@ class UsersController extends Controller
     } else {
 
         Yii::$app->session->setFlash('account_notfound');
-        
+
 
     }
 
